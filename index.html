@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="
   default-src 'none';
-  script-src 'sha256-cHoK+2rxTDBDShU3BJtV8xC+Rgxo1iGWMROSWJKBvsk=' https://cdnjs.cloudflare.com;
+  script-src 'sha256-BfXRIpq7ZwxESzDgckDoZ5LOMEUtyenHMD6TfePC48o=' https://cdnjs.cloudflare.com;
   worker-src 'self' https://cdnjs.cloudflare.com;
   style-src 'unsafe-inline' https://fonts.googleapis.com;
   font-src https://fonts.gstatic.com;
@@ -117,6 +117,37 @@
     width: min(130px, 34vw);
     height: auto;
     display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .mascot-img:hover {
+    transform: scale(1.06);
+  }
+
+  /* ── ÍCONES SOCIAIS DO TOPO (acima do marquee) ── */
+  .social-row-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-top: 4px;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.35s forwards;
+  }
+
+  .social-icon-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--stone);
+    transition: color 0.2s, transform 0.25s;
+  }
+
+  .social-icon-top:hover,
+  .social-icon-top:focus-visible {
+    color: var(--black);
+    transform: translateY(-2px);
   }
 
   /* ── LINKS / BUTTONS ── */
@@ -218,27 +249,6 @@
     animation: fadeIn 1s 1.4s forwards;
   }
 
-  .social-row {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin-bottom: 28px;
-  }
-
-  .social-link {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--stone);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .social-link:hover { color: var(--black); }
-
   .footer-copy {
     font-size: 10px;
     letter-spacing: 0.15em;
@@ -272,6 +282,7 @@
     overflow: hidden;
     white-space: nowrap;
     position: relative;
+    cursor: pointer;
   }
 
   .strip::before,
@@ -300,6 +311,10 @@
     animation: ticker 22s linear infinite;
   }
 
+  .strip.is-paused .ticker-track {
+    animation-play-state: paused;
+  }
+
   .ticker-track span {
     padding: 0 18px;
     flex-shrink: 0;
@@ -316,10 +331,9 @@
   }
 
   /* ── MINIMAP ── */
+  /* fica dentro de <nav class="links">, que já define o max-width/padding — 
+     aqui só preenche 100% da largura disponível, igual aos botões */
   .minimap-wrap {
-    max-width: 420px;
-    margin: 0 auto;
-    padding: 0 28px;
     width: 100%;
     opacity: 0;
     animation: fadeUp 0.7s 1.3s forwards;
@@ -470,6 +484,15 @@
     width: 100%;
     max-width: 860px;
   }
+
+  /* Telas maiores (desktop/notebook): grade fixa 2x2 em vez de 3x1 */
+  @media (min-width: 640px) {
+    .artist-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(240px, 280px));
+      justify-content: center;
+    }
+  }
   .artist-card {
     background: #1e1d1d;
     border: 1px solid var(--black);
@@ -616,6 +639,21 @@
   <p class="tagline-top">Imbituba · Santa Catarina</p>
 
   <img src="imagem/logo1.png" class="wordmark" alt="Pedra Estúdio">
+
+  <div class="social-row-top">
+    <a href="https://www.instagram.com/pedraestudio.tattoo/" target="_blank" rel="noopener noreferrer" class="social-icon-top" aria-label="Instagram">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/>
+        <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+      </svg>
+    </a>
+    <a href="https://wa.me/5548999899588" target="_blank" rel="noopener noreferrer" class="social-icon-top" aria-label="WhatsApp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .16 5.304.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.89 11.89 0 0 0 5.683 1.448h.005c6.585 0 11.89-5.305 11.893-11.893a11.821 11.821 0 0 0-3.423-8.452"/>
+      </svg>
+    </a>
+  </div>
 </header>
 
 <!-- Mascot -->
@@ -623,7 +661,7 @@
   <img src="imagem/pedrinha1.png" alt="Pedrinha" class="mascot-img">
 </div>
 
-<div class="strip">
+<div class="strip" id="tickerStrip" role="button" tabindex="0" aria-pressed="false" aria-label="Pausar ou retomar a faixa de rolagem">
   <div class="ticker-track">
     <span>Tattoo Guest House</span>
     <span class="dot">✦</span>
@@ -712,23 +750,6 @@
 </nav>
 
 <footer>
-  <div class="social-row">
-    <a href="https://www.instagram.com/pedraestudio.tattoo/" target="_blank" rel="noopener noreferrer" class="social-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/>
-        <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/>
-        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
-      </svg>
-      Instagram
-    </a>
-    <a href="https://wa.me/5548999899588" target="_blank" rel="noopener noreferrer" class="social-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.41A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-        <path d="M8.5 9.5c.5 1 1.5 3 3.5 4s3-1 3-1-.5-1.5-1-1.5S13 12 12.5 12 10 10 9.5 9c-.5-1 0-1.5 0-1.5H8.5S8 8.5 8.5 9.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      WhatsApp
-    </a>
-  </div>
   <p class="footer-copy">© 2026 Pedra Estúdio — Tattoo Guest House</p>
   <p class="footer-credit">
     Website desenvolvido por <a href="https://amplifying.com.br/servicos" target="_blank" rel="noopener noreferrer">AMPLIFYING</a>
@@ -868,6 +889,20 @@
 </div>
 
 <script>
+  // ── Pausar/retomar a esteira rolante ao clicar (toggle) ──
+  const tickerStrip = document.getElementById('tickerStrip');
+  function toggleTicker() {
+    const paused = tickerStrip.classList.toggle('is-paused');
+    tickerStrip.setAttribute('aria-pressed', paused ? 'true' : 'false');
+  }
+  tickerStrip.addEventListener('click', toggleTicker);
+  tickerStrip.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleTicker();
+    }
+  });
+
   const TOTAL = 11;
   let current = 0;
 
@@ -1123,8 +1158,7 @@
 
 <a href="https://wa.me/5548999899588" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.41A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-    <path d="M8.5 9.5c.5 1 1.5 3 3.5 4s3-1 3-1-.5-1.5-1-1.5S13 12 12.5 12 10 10 9.5 9c-.5-1 0-1.5 0-1.5H8.5S8 8.5 8.5 9.5z" fill="#25D366"/>
+    <path fill="white" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.77.46 3.45 1.34 4.95L2 22l5.29-1.38a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm4.78 12.42c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31 0-.48 0-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.53.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28z"/>
   </svg>
 </a>
 
