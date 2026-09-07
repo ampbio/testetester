@@ -321,6 +321,11 @@ nav {
   color: rgba(240,239,229,0.6);
 }
 
+.hero-break { display: none; }
+@media (min-width: 1201px) {
+  .hero-break { display: block; content: ""; }
+}
+
 .hero-sub {
   font-size: 13px;
   font-weight: 300;
@@ -1264,7 +1269,7 @@ footer {
     margin-right: auto;
   }
   .hero-right {
-    padding-top: 50px;
+    padding-top: 24px;
     padding-bottom: 50px;
     background: var(--green-dark);
   }
@@ -1283,14 +1288,21 @@ footer {
     padding-bottom: 3rem;
   }
   .hero-left { padding: 4rem 3rem 3rem; }
-  .hero-title { font-size: clamp(52px, 4.8vw, 62px); }
+  .hero-title { font-size: 48px; }
   .section-title { font-size: 52px; }
+  .hero-actions { gap: 0.75rem; }
+  .btn-hero-primary,
+  .btn-hero-outline { width: 200px; }
 }
 
 /* Desktop e telas amplas: 1280px e grid de 12 colunas (cartões em 3 colunas cada). */
 @media (min-width: 1367px) {
-  .hero-title { font-size: clamp(56px, 4.8vw, 68px); }
+  .hero-left { padding: 4rem 3rem 3rem; }
+  .hero-title { font-size: 48px; }
   .section-title { font-size: 56px; }
+  .hero-actions { gap: 0.75rem; }
+  .btn-hero-primary,
+  .btn-hero-outline { width: 200px; }
 }
 
 /* ── MODAL PROJETO ── */
@@ -1735,7 +1747,7 @@ footer {
   <!-- Esquerda -->
   <div class="hero-left">
     <p class="hero-eyebrow">Imbituba e Região, SC</p>
-    <h1 class="hero-title">Projetos Arquitetônicos em Imbituba, <em>Garopaba e Região</em></h1>
+    <h1 class="hero-title">Projetos Arquitetônicos<br class="hero-break">em Imbituba, <em>Garopaba<br class="hero-break">e Região</em></h1>
     <p class="hero-sub">Sempre buscando traduzir suas necessidades e visões em soluções arquitetônicas criativas, funcionais e sustentáveis.</p>
     <div class="hero-actions">
       <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="btn-hero-primary" style="white-space:nowrap">
