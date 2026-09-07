@@ -1,0 +1,2650 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ilton Ferreira - Arquitetura e Interiores - Imbituba - SC</title>
+
+<!-- Security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://arqiltonferreira.com; connect-src 'none'; frame-src 'none'; object-src 'none';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+<!-- SEO -->
+<meta name="description" content="Ilton Ferreira - Arquitetura e Interiores em Imbituba, SC. Projetos arquitetônicos residenciais, comerciais e de interiores, com atendimento em Garopaba, Praia do Rosa, Laguna, Tubarão e Jaguaruna.">
+<meta name="keywords" content="projeto arquitetônico, projeto de arquitetura, arquitetura de interiores, arquitetura comercial, escritório de arquitetura, projeto casa, arquiteto Garopaba, arquiteto, projeto residencial, arquiteto de interiores, arquiteto perto de mim, arquiteto Imbituba, arquiteto Imbituba SC, arquiteto Praia do Rosa, arquiteto Laguna SC, arquiteto Tubarão, arquiteto Jaguaruna">
+<meta name="author" content="Ilton Ferreira">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://arqiltonferreira.com/">
+
+<!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arqiltonferreira.com/">
+<meta property="og:title" content="Ilton Ferreira - Arquitetura e Interiores - Imbituba - SC">
+<meta property="og:description" content="Escritório de arquitetura em Imbituba, SC. Projetos arquitetônicos residenciais, arquitetura comercial e arquitetura de interiores. Atendimento em Garopaba, Praia do Rosa, Laguna, Tubarão e Jaguaruna.">
+<meta property="og:image" content="https://arqiltonferreira.com/imagens/thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Ilton Ferreira Arquitetura e Interiores">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://arqiltonferreira.com/">
+<meta name="twitter:title" content="Ilton Ferreira - Arquitetura e Interiores - Imbituba - SC">
+<meta name="twitter:description" content="Projetos arquitetônicos residenciais, arquitetura comercial e arquitetura de interiores em Imbituba e região. Atendimento em Garopaba, Praia do Rosa, Laguna, Tubarão e Jaguaruna.">
+<meta name="twitter:image" content="https://arqiltonferreira.com/imagens/thumb.png">
+
+<!-- Theme color (barra do navegador mobile) -->
+<meta name="theme-color" content="#2C3A2D">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="imagens/logo.png">
+<link rel="icon" type="image/png" sizes="16x16" href="imagens/logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="imagens/logo.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@200;300;400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green:        #3D4F3E;
+  --green-dark:   #2C3A2D;
+  --green-pale:   #6B7A6C;
+  --cream:        #F0EFE5;
+  --cream-dark:   #E4E3D8;
+  --cream-mid:    #ECEBD9;
+  --text:         #2C3A2D;
+  --text-muted:   #6B7A6C;
+  --text-faint:   #96A597;
+  --white:        #FAFAF5;
+
+  /* Base mobile portrait — método de áreas úteis */
+  --content-max-width: 360px;
+  --layout-gap: 16px;
+}
+
+/* As variáveis mudam por faixa; os valores nos media queries permanecem
+   explícitos porque CSS custom properties não funcionam como condição de @media. */
+@media (min-width: 768px) {
+  :root { --content-max-width: 728px; --layout-gap: 16px; }
+}
+@media (min-width: 881px) {
+  :root { --content-max-width: 780px; --layout-gap: 16px; }
+}
+@media (min-width: 1025px) {
+  :root { --content-max-width: 924px; --layout-gap: 16px; }
+}
+@media (min-width: 1201px) {
+  :root { --content-max-width: 1100px; --layout-gap: 32px; }
+}
+@media (min-width: 1367px) {
+  :root { --content-max-width: 1280px; --layout-gap: 32px; }
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  opacity: 0;
+  animation: pageFadeIn 1s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; opacity: 1; }
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(240,239,229,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(61,79,62,0.12);
+  transition: background 0.3s;
+}
+
+.nav-inner {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.nav-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.nav-logo-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: var(--green-dark);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.nav-logo-text > span {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-muted);
+  display: block;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -3px;
+  width: 0; height: 1px;
+  background: var(--green);
+  transition: width 0.25s;
+}
+
+.nav-links a:hover { color: var(--text); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: var(--green) !important;
+  color: var(--cream) !important;
+  padding: 0.55rem 1.25rem;
+  border-radius: 2px;
+  font-size: 10px !important;
+  letter-spacing: 0.2em !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--green-dark) !important; opacity: 1; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px; height: 1.5px;
+  background: var(--text);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 64px; left: 0; right: 0;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(61,79,62,0.12);
+  padding: 1.5rem 2rem 2rem;
+  z-index: 99;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a,
+.mobile-link {
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  background: var(--green-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 5rem 4rem 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left::before {
+  content: '';
+  position: absolute;
+  bottom: -80px; right: -80px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  border: 1px solid rgba(240,239,229,0.06);
+}
+
+.hero-left::after {
+  content: '';
+  position: absolute;
+  top: 60px; left: -60px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  border: 1px solid rgba(240,239,229,0.04);
+}
+
+.hero-eyebrow {
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(240,239,229,0.45);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px; height: 1px;
+  background: rgba(240,239,229,0.25);
+}
+
+.hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(38px, 4.8vw, 68px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+  margin-bottom: 2rem;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: rgba(240,239,229,0.6);
+}
+
+.hero-sub {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(240,239,229,0.55);
+  max-width: 340px;
+  margin-bottom: 3rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 220px;
+  background: var(--cream);
+  color: var(--green-dark);
+  text-decoration: none;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.75rem;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-hero-primary:hover { background: var(--cream-dark); transform: translateY(-1px); }
+
+.btn-hero-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 220px;
+  background: transparent;
+  color: rgba(240,239,229,0.7);
+  text-decoration: none;
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.75rem;
+  border-radius: 2px;
+  border: 1px solid rgba(240,239,229,0.2);
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.btn-hero-outline:hover {
+  border-color: rgba(240,239,229,0.45);
+  color: var(--cream);
+  transform: translateY(-1px);
+}
+
+/* Hero right — slideshow */
+.hero-right {
+  position: relative;
+  overflow: hidden;
+  background: var(--green);
+}
+
+.hero-slideshow {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s cubic-bezier(0.77,0,0.18,1);
+}
+
+.hero-slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.hero-slide-nav {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.hero-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: rgba(240,239,229,0.3);
+  border: none; cursor: pointer; padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.hero-dot.active {
+  background: var(--cream);
+  transform: scale(1.3);
+}
+
+
+/* ── TICKER ── */
+.ticker-section {
+  background: var(--green-dark);
+  overflow: hidden;
+  padding: 0.6rem 0;
+  border-top: 1px solid rgba(240,239,229,0.06);
+  border-bottom: 1px solid rgba(240,239,229,0.06);
+}
+
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker-scroll 55s linear infinite;
+  width: max-content;
+}
+
+.ticker-track:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream);
+  padding-right: 0.75rem;
+}
+
+.ticker-diamond {
+  width: 4px; height: 4px;
+  background: var(--cream);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── SECTIONS SHARED ── */
+section {
+  padding: 6rem 2rem;
+}
+
+.section-inner {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(36px, 4.2vw, 56px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.faq-list { max-width: 720px; }
+@media (max-width: 1023px) {
+  .section-title.mobile-center { text-align: center; }
+}
+@media (min-width: 1024px) {
+  .section-title { text-align: center; }
+  .faq-list { max-width: 100%; }
+}
+
+/* ── SOBRE ── */
+.sobre {
+  background: var(--cream);
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--layout-gap);
+  align-items: stretch;
+  margin-top: 0;
+}
+
+.sobre-image-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.sobre-image-main {
+  width: 100%;
+  flex: 1;
+  min-height: 300px;
+  background: var(--green-dark);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sobre-image-main img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+
+.sobre-accent {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 60%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(61,79,62,0.15);
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.sobre-content { padding-right: 1rem; }
+
+.sobre-text {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-top: 2rem;
+  letter-spacing: 0.015em;
+}
+
+.sobre-details {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.sobre-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 12.5px;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.sobre-detail::before {
+  content: '';
+  display: block;
+  width: 14px; height: 1px;
+  background: var(--green);
+  opacity: 0.5;
+  margin-top: 0.65em;
+  flex-shrink: 0;
+}
+
+.sobre-cta {
+  margin-top: 3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  border-bottom: 1px solid rgba(61,79,62,0.25);
+  padding-bottom: 0.35rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+.sobre-cta:hover {
+  color: var(--green-dark);
+  border-color: var(--green);
+}
+
+/* ── SERVIÇOS ── */
+.servicos {
+  background: var(--green-dark);
+  padding: 6rem 2rem;
+}
+
+.servicos .section-title { color: var(--cream); }
+.servicos .section-title em { color: rgba(240,239,229,0.45); }
+
+.servicos-grid {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--layout-gap);
+}
+
+.servico-card {
+  background: var(--green-dark);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.servico-card:hover {
+  background: rgba(61,79,62,0.6);
+}
+
+.servico-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.servico-icon {
+  width: 22px; height: 22px;
+  flex-shrink: 0;
+  color: rgba(240,239,229,0.5);
+}
+
+.servico-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+}
+
+.servico-desc {
+  font-size: 12.5px;
+  line-height: 1.85;
+  color: rgba(240,239,229,0.45);
+  font-weight: 300;
+}
+
+/* ── PORTFÓLIO ── */
+.portfolio {
+  background: var(--cream);
+}
+
+.portfolio-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.portfolio-link {
+  font-size: 10.5px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: color 0.2s;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(61,79,62,0.2);
+}
+.portfolio-link:hover { color: var(--text); }
+
+
+/* Portfolio grid */
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--layout-gap);
+}
+
+.proj-card {
+  flex: 0 0 calc((100% - 6rem) / 4);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.3s;
+  border: 1px solid rgba(61,79,62,0.08);
+}
+
+.proj-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(44,58,45,0.12);
+}
+
+.proj-card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--cream-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proj-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.proj-card:hover .proj-card-img img { transform: scale(1.04); }
+
+
+.proj-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+}
+
+.proj-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.proj-card-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.proj-card-type {
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.proj-card-arrow {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(61,79,62,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.proj-card:hover .proj-card-arrow {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  color: var(--cream);
+}
+
+@media (max-width: 767px) {
+  .portfolio {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .portfolio .section-inner {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .portfolio-header {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .portfolio-grid {
+    gap: var(--layout-gap);
+    padding: 0;
+    flex-direction: column;
+  }
+  .portfolio-grid .proj-card {
+    flex: 0 0 100%;
+    width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid rgba(61,79,62,0.1);
+  }
+  .proj-card-img {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+  }
+  .proj-card-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+  .proj-card-name {
+    font-size: 20px;
+  }
+  .proj-card-arrow {
+    width: 42px;
+    height: 42px;
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+    color: var(--cream);
+  }
+
+  .contato-items-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 1rem;
+  }
+  .contato-item {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .contato-item:nth-child(even) {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+
+/* ── PROCESSO ── */
+.processo {
+  background: var(--cream-mid);
+  padding: 6rem 2rem;
+}
+
+.processo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--layout-gap);
+  align-items: start;
+  margin-top: 3.5rem;
+}
+
+.processo-steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.passo {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(61,79,62,0.1);
+  align-items: start;
+  transition: background 0.2s;
+}
+
+.passo:first-child { padding-top: 0; }
+.passo:last-child { border-bottom: none; }
+
+.passo-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 36px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(61,79,62,0.2);
+  line-height: 1;
+  text-align: right;
+}
+
+.passo-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.passo-desc {
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.processo-aside {
+  position: sticky;
+  top: 6rem;
+  background: var(--green-dark);
+  border-radius: 2px;
+  padding: 3rem;
+  color: var(--cream);
+}
+
+.processo-aside-quote {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(20px, 4vw, 30px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  color: rgba(240,239,229,0.8);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.processo-aside-sub {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(240,239,229,0.4);
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  margin-bottom: 2.5rem;
+}
+
+.processo-aside-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  background: rgba(240,239,229,0.1);
+  color: rgba(240,239,229,0.75);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.5rem;
+  border: 1px solid rgba(240,239,229,0.12);
+  border-radius: 2px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.processo-aside-cta:hover {
+  background: rgba(240,239,229,0.15);
+  border-color: rgba(240,239,229,0.25);
+}
+
+/* ── CONTATO ── */
+.contato {
+  background: var(--green-dark);
+  padding: 3rem 2rem;
+}
+
+.contato .section-title { color: var(--cream); }
+.contato .section-title em { color: rgba(240,239,229,0.45); }
+
+.contato-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  text-align: center;
+}
+
+.contato-items-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.contato-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-items: center;
+  text-align: center;
+}
+
+.contato-item-label {
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(240,239,229,0.3);
+}
+
+.contato-item-value {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(240,239,229,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+  letter-spacing: 0.02em;
+}
+a.contato-item-value:hover { color: var(--cream); }
+
+.contato-socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-link {
+  width: 38px; height: 38px;
+  border: 1px solid rgba(240,239,229,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(240,239,229,0.45);
+  transition: border-color 0.2s, color 0.2s;
+}
+.social-link:hover {
+  border-color: rgba(240,239,229,0.35);
+  color: rgba(240,239,229,0.8);
+}
+.social-link svg { width: 15px; height: 15px; }
+
+/* ── FOOTER ── */
+footer {
+  background: #1e2a1f;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(240,239,229,0.05);
+}
+
+.footer-copy,
+.footer-dev {
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-copy {
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+.footer-dev {
+  font-size: 8.5px;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(240,239,229,0.4);
+  margin-top: 0.5rem;
+}
+
+.footer-dev-link {
+  color: #F56A00;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.footer-dev-link:hover {
+  opacity: 0.75;
+}
+
+/* ── WHATSAPP FLOAT ── */
+.whats-float {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  width: 54px; height: 54px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.whats-float:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+}
+.whats-float svg { width: 26px; height: 26px; display: block; }
+
+/* ── ANIMATIONS ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sobre-mobile-img {
+  display: none;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu {
+    padding-left: max(1.5rem, calc((100vw - var(--content-max-width)) / 2));
+    padding-right: max(1.5rem, calc((100vw - var(--content-max-width)) / 2));
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: clamp(220px, 50vw, 420px) 1fr;
+    min-height: auto;
+  }
+
+  .hero-right { grid-row: 1; }
+
+  .hero-left {
+    padding: 3rem 1.75rem 3.5rem;
+    grid-row: 2;
+  }
+
+  /* Fundo e imagem continuam full-width; o conteúdo respeita a área útil. */
+  .hero-left > * {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-eyebrow {
+    justify-content: center;
+  }
+
+  .hero-title {
+    text-align: center;
+    font-size: clamp(28px, 8vw, 48px);
+  }
+
+  .hero-sub {
+    text-align: center;
+    max-width: var(--content-max-width);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-outline {
+    width: 100%;
+  }
+
+  .sobre-grid,
+  .processo-grid { grid-template-columns: 1fr; gap: var(--layout-gap); }
+
+  .contato-items-row { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .contato-item { align-items: center; text-align: center; }
+
+  .sobre-image-wrap { display: none; }
+  .sobre-mobile-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: center 15%;
+    border-radius: 2px;
+    margin: 1.5rem 0;
+  }
+  .processo-aside { position: static; }
+
+  .servicos-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .portfolio-grid { justify-content: flex-start; }
+  .portfolio-grid .proj-card { flex: 0 0 calc((100% - 1rem) / 2); }
+  .portfolio-grid .proj-card .proj-card-img { aspect-ratio: 16 / 9; }
+  .portfolio-header { flex-direction: column; align-items: flex-start; }
+
+  section { padding: 4rem 1.5rem; }
+  .servicos { padding: 4rem 1.5rem; }
+  .contato { padding: 3rem 1.5rem; }
+  .processo { padding: 4rem 1.5rem; }
+
+
+}
+
+/* Celular retrato: área útil de até 360px e grids em uma coluna. */
+@media (max-width: 767px) {
+  .servicos-grid { grid-template-columns: 1fr; }
+  .portfolio-grid .proj-card { flex-basis: 100%; }
+
+  .nav-inner { padding-left: 1rem; padding-right: 1rem; }
+  .hero-title { font-size: clamp(32px, 9vw, 40px); }
+  .section-title { font-size: clamp(32px, 9vw, 38px); }
+  .servico-card { padding: 2rem; }
+  .servico-title { font-size: 22px; }
+  .sobre-text { font-size: 14px; line-height: 1.8; }
+  .passo-title { font-size: 21px; }
+  .contato-item-value { font-size: 13px; }
+  .footer-copy { font-size: 8.5px; letter-spacing: 0.15em; }
+}
+
+/* Celular paisagem: 728px, seis colunas conceituais e gutter de 16px. */
+@media (min-width: 768px) and (max-width: 880px) {
+  .hero-title { font-size: clamp(40px, 6vw, 48px); }
+  .section-title { font-size: 40px; }
+}
+
+/* Tablet retrato: 780px. O layout permanece empilhado para leitura confortável. */
+@media (min-width: 881px) and (max-width: 1024px) {
+  .hero-title { font-size: 48px; }
+  .section-title { font-size: 44px; }
+}
+
+/* Tablet paisagem: 924px. Portfólio usa dois cartões por linha (3 de 6 colunas). */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .portfolio-grid { justify-content: flex-start; }
+  .portfolio-grid .proj-card { flex: 0 0 calc((100% - 1rem) / 2); }
+  .hero-title { font-size: clamp(42px, 4.8vw, 58px); }
+  .section-title { font-size: 48px; }
+}
+
+/* Notebook: 1100px, com escala intermediária antes do desktop de 1280px. */
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .hero-title { font-size: clamp(52px, 4.8vw, 62px); }
+  .section-title { font-size: 52px; }
+}
+
+/* Desktop e telas amplas: 1280px e grid de 12 colunas (cartões em 3 colunas cada). */
+@media (min-width: 1367px) {
+  .hero-title { font-size: clamp(56px, 4.8vw, 68px); }
+  .section-title { font-size: 56px; }
+}
+
+/* ── MODAL PROJETO ── */
+.proj-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(20,28,21,0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.proj-modal-overlay.open { display: flex; }
+
+.proj-modal-box {
+  background: var(--white);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 680px;
+  max-height: 88vh;
+  box-shadow: 0 32px 80px rgba(20,28,21,0.35);
+  position: relative;
+  animation: modalIn 0.28s cubic-bezier(.4,0,.2,1);
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.96) translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.proj-modal-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  z-index: 10;
+  background: rgba(240,239,229,0.92);
+  border: none;
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  color: var(--text);
+  transition: background 0.2s;
+}
+.proj-modal-close:hover { background: var(--cream-dark); }
+
+/* Slider */
+.proj-modal-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  flex-shrink: 0;
+  background: var(--cream-dark);
+  overflow: hidden;
+}
+.proj-modal-slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+.proj-modal-slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.proj-modal-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Placeholder sem foto */
+.proj-modal-slide-placeholder {
+  min-width: 100%;
+  height: 100%;
+  background: var(--cream-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--text-faint);
+}
+.proj-modal-slide-placeholder svg { opacity: 0.35; }
+.proj-modal-slide-placeholder span { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; }
+
+.proj-modal-nav {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  background: rgba(240,239,229,0.85);
+  border: none; border-radius: 50%;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  color: var(--text);
+  transition: background 0.2s, opacity 0.2s;
+  z-index: 5;
+}
+.proj-modal-nav:hover { background: var(--cream); }
+.proj-modal-nav.prev { left: 0.75rem; }
+.proj-modal-nav.next { right: 0.75rem; }
+.proj-modal-nav.hidden { opacity: 0; pointer-events: none; }
+
+.proj-modal-dots {
+  position: absolute;
+  bottom: 0.9rem; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 5px; z-index: 5;
+}
+.proj-modal-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(240,239,229,0.45);
+  border: none; cursor: pointer; padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.proj-modal-dot.active { background: var(--cream); transform: scale(1.3); }
+
+
+/* Info panel (mobile/base) */
+.proj-modal-info {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+}
+.proj-modal-meta { border-bottom: 1px solid var(--cream-dark); padding-bottom: 1rem; }
+.proj-modal-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.45rem;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.proj-modal-type {
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  font-weight: 400;
+}
+.proj-modal-desc {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+.proj-modal-desc p { margin-bottom: 0.9em; }
+.proj-modal-desc p:last-child { margin-bottom: 0; }
+
+.proj-modal-whats {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  padding: 0.85rem 1.25rem;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  transition: background 0.2s, transform 0.15s;
+  align-self: stretch;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.proj-modal-whats svg { width: 20px; height: 20px; flex-shrink: 0; }
+.proj-modal-whats svg path { fill: white; }
+.proj-modal-whats:hover { background: #1ebe5d; transform: translateY(-1px); }
+
+/* Desktop: lado a lado */
+@media (min-width: 1201px) {
+  .proj-modal-box {
+    flex-direction: row;
+    max-width: 1000px;
+    width: 90vw;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+  .proj-modal-slider {
+    width: 60%;
+    flex-shrink: 0;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    border-radius: 6px 0 0 6px;
+    overflow: hidden;
+  }
+  .proj-modal-info {
+    width: 40%;
+    flex-shrink: 0;
+    padding: 2rem 1.75rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--cream-dark);
+    align-self: stretch;
+    overflow: hidden;
+    gap: 0;
+  }
+  .proj-modal-meta { flex-shrink: 0; margin-bottom: 1rem; }
+  .proj-modal-desc { flex: 1; overflow: hidden; }
+  .proj-modal-whats {
+    flex-shrink: 0;
+    margin-top: 1.25rem;
+    padding: 0.9rem 1.25rem;
+    font-size: 13px;
+  }
+  .proj-modal-close { top: 0.75rem; right: 0.75rem; }
+}
+
+/* Tablet / janela estreita */
+@media (min-width: 601px) and (max-width: 1200px) {
+  .proj-modal-box {
+    max-width: 560px;
+    max-height: 90vh;
+    flex-direction: column;
+  }
+  .proj-modal-slider {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ── FAQ (animação abrir/fechar) ── */
+.faq-list details summary svg {
+  transition: transform 0.3s ease;
+}
+.faq-list details.is-open summary svg {
+  transform: rotate(180deg);
+}
+.faq-list details > p {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
+}
+</style>
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["ProfessionalService", "Architect"],
+      "@id": "https://arqiltonferreira.com/#business",
+      "name": "Ilton Ferreira Arquitetura e Interiores",
+      "description": "Escritório de arquitetura em Imbituba, SC. Projetos arquitetônicos residenciais, arquitetura comercial e arquitetura de interiores em Imbituba, Garopaba, Praia do Rosa, Laguna, Tubarão e Jaguaruna.",
+      "url": "https://arqiltonferreira.com",
+      "telephone": "+55-48-9698-2800",
+      "email": "arqiltonferreira@gmail.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Imbituba",
+        "addressRegion": "SC",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -28.2397,
+        "longitude": -48.6656
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ],
+      "areaServed": [
+        {"@type": "City", "name": "Imbituba", "containedInPlace": {"@type": "State", "name": "Santa Catarina"}},
+        {"@type": "City", "name": "Garopaba", "containedInPlace": {"@type": "State", "name": "Santa Catarina"}},
+        {"@type": "City", "name": "Praia do Rosa", "containedInPlace": {"@type": "State", "name": "Santa Catarina"}},
+        {"@type": "City", "name": "Laguna", "containedInPlace": {"@type": "State", "name": "Santa Catarina"}},
+        {"@type": "City", "name": "Tubarão", "containedInPlace": {"@type": "State", "name": "Santa Catarina"}},
+        {"@type": "City", "name": "Jaguaruna", "containedInPlace": {"@type": "State", "name": "Santa Catarina"}}
+      ],
+      "serviceType": [
+        "Projeto Arquitetônico Residencial",
+        "Projeto Arquitetônico Comercial",
+        "Arquitetura de Interiores",
+        "Projeto de Arquitetura",
+        "Projeto Executivo",
+        "Regularização de Imóveis",
+        "Aprovação de Projetos"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Arquitetura",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Projeto Arquitetônico Residencial", "description": "Projeto completo para casas e apartamentos, do estudo preliminar ao executivo."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Projeto Arquitetônico Comercial", "description": "Projetos para lojas, escritórios, restaurantes e espaços comerciais."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Arquitetura de Interiores", "description": "Desenvolvimento de ambientes com identidade visual, layout e especificação de materiais."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Projeto Executivo", "description": "Documentação técnica completa para execução de obras."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Regularização de Imóveis", "description": "Regularização de construções e aprovação de projetos junto à prefeitura e órgãos competentes."}}
+        ]
+      },
+      "sameAs": [
+        "https://www.instagram.com/arq.iltonferreira/"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Ilton Ferreira",
+        "jobTitle": "Arquiteto e Urbanista",
+        "alumniOf": "Universidade do Sul de Santa Catarina"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quanto custa um projeto arquitetônico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O valor de um projeto arquitetônico varia conforme o tipo, residencial, comercial ou de interiores, a área total e o nível de detalhamento necessário. Após uma conversa inicial para entender o escopo, é elaborada uma proposta personalizada com todas as etapas e entregas previstas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que está incluído em um projeto arquitetônico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Um projeto arquitetônico completo inclui estudo preliminar, anteprojeto com perspectivas em 3D, plantas baixas, cortes, elevações, especificação de materiais e projeto executivo com todos os detalhamentos necessários para a execução da obra. Projetos para aprovação na prefeitura também incluem a documentação técnica exigida pelos órgãos competentes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo leva para desenvolver um projeto residencial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O prazo de um projeto residencial depende da complexidade e do tamanho da edificação. Em média, o processo completo, do estudo preliminar ao projeto executivo, leva entre 60 e 120 dias. Projetos de arquitetura de interiores ou consultorias pontuais podem ter prazos menores, definidos caso a caso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o processo de projeto arquitetônico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O processo começa com uma reunião para entender as necessidades do cliente, seguida pelo estudo preliminar, desenvolvimento do anteprojeto com imagens em 3D e elaboração do projeto executivo completo. Cada etapa é desenvolvida com atenção aos detalhes para garantir segurança e qualidade durante a execução da obra."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa contratar um arquiteto em Imbituba?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O valor para contratar um arquiteto em Imbituba varia conforme o tamanho, a complexidade e as necessidades de cada projeto. Após uma conversa inicial e análise do escopo, é possível elaborar uma proposta personalizada, considerando todas as etapas necessárias para o desenvolvimento do trabalho."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa um projeto residencial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O investimento em um projeto residencial depende de fatores como área construída, padrão do imóvel e nível de detalhamento necessário. Cada projeto é desenvolvido de forma exclusiva, buscando proporcionar conforto, funcionalidade e aproveitamento inteligente dos espaços."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O arquiteto acompanha a obra?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O escritório oferece suporte técnico durante a execução da obra, esclarecendo dúvidas e garantindo que o projeto arquitetônico seja fielmente executado. O acompanhamento presencial pode ser combinado conforme a necessidade e a localização do projeto, atendendo clientes em Imbituba, Garopaba, Praia do Rosa, Laguna, Tubarão e Jaguaruna."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O escritório atende Praia do Rosa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O escritório atende clientes em Praia do Rosa, Imbituba, Garopaba, Laguna e outras cidades do litoral sul de Santa Catarina. Os projetos podem ser realizados tanto presencialmente quanto de forma remota, mantendo acompanhamento próximo em todas as fases do trabalho."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faz projeto para aprovação na prefeitura?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Os projetos são desenvolvidos de acordo com as normas e legislações vigentes, incluindo toda a documentação necessária para aprovação junto à prefeitura e demais órgãos competentes. O objetivo é garantir que a obra seja executada de forma regularizada e com segurança."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ░░ NAV ░░ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="imagens/logo.png" alt="Ilton Ferreira" class="nav-logo-img">
+      <span class="nav-logo-text">
+        Ilton Ferreira
+        <span>Arquitetura e Interiores</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#processo">Processo</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os." target="_blank" rel="noopener noreferrer" class="nav-cta">Orçamento</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#sobre" class="mobile-link">Sobre</a>
+  <a href="#servicos" class="mobile-link">Serviços</a>
+  <a href="#portfolio" class="mobile-link">Portfólio</a>
+  <a href="#processo" class="mobile-link">Processo</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os." target="_blank" rel="noopener noreferrer" class="mobile-link">Orçamento →</a>
+</div>
+
+<main id="conteudo">
+<!-- ░░ HERO ░░ -->
+<section class="hero" id="hero">
+  <!-- Esquerda -->
+  <div class="hero-left">
+    <p class="hero-eyebrow">Imbituba e Região, SC</p>
+    <h1 class="hero-title">Projetos Arquitetônicos em Imbituba, <em>Garopaba e Região</em></h1>
+    <p class="hero-sub">Sempre buscando traduzir suas necessidades e visões em soluções arquitetônicas criativas, funcionais e sustentáveis.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="btn-hero-primary" style="white-space:nowrap">
+        Faça um orçamento
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#portfolio" class="btn-hero-outline">Ver portfólio</a>
+    </div>
+  </div>
+
+  <!-- Direita — slideshow -->
+  <div class="hero-right">
+    <div class="hero-slideshow">
+      <div class="hero-slides" id="hero-slides">
+        <div class="hero-slide">
+          <img src="imagens/aeb1.jpg" alt="Residência A &amp; B — fachada principal">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/aeb2.jpg" alt="Residência A &amp; B — detalhe externo">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/fee1.jpg" alt="Residência F &amp; E — fachada">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/fee2.jpg" alt="Residência F &amp; E — vista lateral">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/ier1.jpg" alt="Studio I &amp; R — sala integrada">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/ier2.jpg" alt="Studio I &amp; R — cozinha">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/pep1.jpg" alt="Apto P &amp; P — sala de estar">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/pep2.jpg" alt="Apto P &amp; P — ambientes integrados">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/pep3.jpg" alt="Apto P &amp; P — detalhe de interiores">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/pep4.jpg" alt="Apto P &amp; P — quarto">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/ces1.jpg" alt="Residência C &amp; S — área gourmet">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/ces2.jpg" alt="Residência C &amp; S — piscina">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/aep1.jpg" alt="Residência A &amp; P — fachada">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/aep2.jpg" alt="Residência A &amp; P — paisagismo">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/dec1.jpg" alt="Cabana D &amp; C — vista externa">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/dec2.jpg" alt="Cabana D &amp; C — integração com a natureza">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/jek1.jpg" alt="Residência J &amp; K — fachada">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/jek2.jpg" alt="Residência J &amp; K — detalhe">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/aea1.jpg" alt="Residência A &amp; A — volumetria">
+        </div>
+        <div class="hero-slide">
+          <img src="imagens/studio1.jpg" alt="Studio — cozinha integrada">
+        </div>
+      </div>
+
+
+      <div class="hero-slide-nav" id="hero-dots">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker-section">
+  <div class="ticker-track" id="ticker-track"></div>
+</div>
+
+<!-- ░░ SOBRE ░░ -->
+<section class="sobre" id="sobre">
+  <div class="section-inner">
+    <div class="sobre-grid">
+      <div class="sobre-image-wrap">
+        <div class="sobre-image-main">
+          <img loading="lazy" src="imagens/ilton.png" alt="Ilton Ferreira — Arquiteto e Urbanista em Imbituba SC" >
+        </div>
+        <div class="sobre-accent"></div>
+      </div>
+
+      <div class="sobre-content">
+        <h2 class="section-title mobile-center fade-up">Arquiteto e <em>Urbanista</em></h2>
+        <p class="sobre-text fade-up">Formado pela Universidade do Sul de Santa Catarina, pós-graduando em Arquitetura de Interiores pelo Instituto PRISMA. À frente do escritório de arquitetura Ilton Ferreira, desenvolve projetos arquitetônicos residenciais, comerciais e de interiores em Imbituba, Garopaba, Praia do Rosa, Laguna, Tubarão e Jaguaruna, do primeiro rascunho até o projeto executivo pronto para a obra.</p>
+        <img loading="lazy" src="imagens/ilton.png" alt="Ilton Ferreira — Arquiteto em Imbituba SC" class="sobre-mobile-img fade-up">
+        <div class="sobre-details fade-up">
+          <p class="sobre-detail">Cada projeto arquitetônico é desenvolvido para traduzir as necessidades e visões do cliente em soluções criativas, funcionais e sustentáveis.</p>
+          <p class="sobre-detail">Do estudo preliminar ao projeto executivo completo, com atenção aos detalhes em cada etapa, seja em arquitetura residencial, comercial ou de interiores.</p>
+        </div>
+        <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os." target="_blank" rel="noopener noreferrer" class="sobre-cta fade-up">
+          Vamos conversar
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ SERVIÇOS ░░ -->
+<section class="servicos" id="servicos">
+  <div class="section-inner">
+    <h2 class="section-title mobile-center fade-up">Projeto Arquitetônico <em>Residencial, Comercial e de Interiores</em></h2>
+
+    <div class="servicos-grid fade-up">
+
+      <div class="servico-card">
+        <div class="servico-header">
+          <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <h3 class="servico-title">Projeto Arquitetônico Residencial</h3>
+        </div>
+        <p class="servico-desc">Projetos residenciais personalizados para casas e apartamentos em Imbituba, Garopaba, Praia do Rosa e região. Do estudo preliminar ao projeto executivo completo.</p>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-header">
+          <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+          </svg>
+          <h3 class="servico-title">Projeto Arquitetônico Comercial</h3>
+        </div>
+        <p class="servico-desc">Arquitetura comercial para lojas, escritórios, restaurantes e clínicas em Imbituba, Laguna, Tubarão e Jaguaruna. Do conceito ao projeto executivo completo.</p>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-header">
+          <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+          <h3 class="servico-title">Arquitetura de Interiores</h3>
+        </div>
+        <p class="servico-desc">Projetos de arquitetura de interiores e design de interiores para ambientes residenciais e comerciais, com sofisticação e atenção a cada detalhe.</p>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-header">
+          <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+          </svg>
+          <h3 class="servico-title">Projeto Executivo e Regularização</h3>
+        </div>
+        <p class="servico-desc">Documentação técnica completa para execução da obra e regularização de imóveis junto à prefeitura, com aprovação de projetos em Imbituba e região.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░ PORTFÓLIO ░░ -->
+<section class="portfolio" id="portfolio">
+  <div class="section-inner">
+    <div class="portfolio-header">
+      <div>
+        <h2 class="section-title mobile-center fade-up">Projetos <em>selecionados</em></h2>
+      </div>
+      <a href="https://www.instagram.com/arq.iltonferreira/" target="_blank" rel="noopener noreferrer" class="portfolio-link fade-up">
+        Ver todos os projetos →
+      </a>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <!-- Residência A & B -->
+      <div class="proj-card fade-up" onclick="openModal(0)">
+        <div class="proj-card-img">
+          <img loading="lazy" src="imagens/aeb1.jpg" alt="Projeto arquitetônico residencial em SC — Residência A &amp; B por Ilton Ferreira">
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-info">
+            <p class="proj-card-name">Residência A &amp; B</p>
+            <p class="proj-card-type">Arquitetura Residencial</p>
+          </div>
+          <div class="proj-card-arrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Residência F & E -->
+      <div class="proj-card fade-up" onclick="openModal(1)">
+        <div class="proj-card-img">
+          <img loading="lazy" src="imagens/fee1.jpg" alt="Projeto de casa moderna em Santa Catarina — Residência F &amp; E por Ilton Ferreira">
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-info">
+            <p class="proj-card-name">Residência F &amp; E</p>
+            <p class="proj-card-type">Arquitetura Residencial</p>
+          </div>
+          <div class="proj-card-arrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Studio I & R -->
+      <div class="proj-card fade-up" onclick="openModal(2)">
+        <div class="proj-card-img">
+          <img loading="lazy" src="imagens/ier1.jpg" alt="Design de interiores studio compacto em SC — projeto Ilton Ferreira arquiteto Imbituba">
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-info">
+            <p class="proj-card-name">Studio I &amp; R</p>
+            <p class="proj-card-type">Design de Interiores</p>
+          </div>
+          <div class="proj-card-arrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Apto P & P -->
+      <div class="proj-card fade-up" onclick="openModal(3)">
+        <div class="proj-card-img">
+          <img loading="lazy" src="imagens/pep1.jpg" alt="Design de interiores apartamento contemporâneo em SC — Apto P &amp; P por Ilton Ferreira">
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-info">
+            <p class="proj-card-name">Apto P &amp; P</p>
+            <p class="proj-card-type">Design de Interiores</p>
+          </div>
+          <div class="proj-card-arrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Residência C & S -->
+      <div class="proj-card fade-up" onclick="openModal(4)">
+        <div class="proj-card-img">
+          <img loading="lazy" src="imagens/ces1.jpg" alt="Projeto residencial com área gourmet e piscina em SC — Residência C &amp; S arquiteto Imbituba">
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-info">
+            <p class="proj-card-name">Residência C &amp; S</p>
+            <p class="proj-card-type">Arquitetura Residencial</p>
+          </div>
+          <div class="proj-card-arrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Residência A & P -->
+      <div class="proj-card fade-up" onclick="openModal(5)">
+        <div class="proj-card-img">
+          <img loading="lazy" src="imagens/aep1.jpg" alt="Projeto arquitetônico residencial com paisagismo em Santa Catarina — Residência A &amp; P">
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-info">
+            <p class="proj-card-name">Residência A &amp; P</p>
+            <p class="proj-card-type">Arquitetura Residencial</p>
+          </div>
+          <div class="proj-card-arrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cabana D & C -->
+      <div class="proj-card fade-up" onclick="openModal(6)">
+        <div class="proj-card-img">
+          <img loading="lazy" src="imagens/dec1.jpg" alt="Projeto de cabana integrada à natureza em SC — arquiteto Ilton Ferreira Imbituba">
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-info">
+            <p class="proj-card-name">Cabana D &amp; C</p>
+            <p class="proj-card-type">Arquitetura Residencial</p>
+          </div>
+          <div class="proj-card-arrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Residência J & K -->
+      <div class="proj-card fade-up" onclick="openModal(7)">
+        <div class="proj-card-img">
+          <img loading="lazy" src="imagens/jek1.jpg" alt="Projeto residencial com materiais naturais em Santa Catarina — Residência J &amp; K Ilton Ferreira">
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-info">
+            <p class="proj-card-name">Residência J &amp; K</p>
+            <p class="proj-card-type">Arquitetura Residencial</p>
+          </div>
+          <div class="proj-card-arrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Residência A & A -->
+      <div class="proj-card fade-up" onclick="openModal(8)">
+        <div class="proj-card-img">
+          <img loading="lazy" src="imagens/aea1.jpg" alt="Projeto arquitetônico minimalista com concreto e madeira em SC — Residência A &amp; A">
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-info">
+            <p class="proj-card-name">Residência A &amp; A</p>
+            <p class="proj-card-type">Arquitetura Residencial</p>
+          </div>
+          <div class="proj-card-arrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Studio -->
+      <div class="proj-card fade-up" onclick="openModal(9)">
+        <div class="proj-card-img">
+          <img loading="lazy" src="imagens/studio1.jpg" alt="Design de interiores studio com cozinha integrada em SC — projeto arquiteto Ilton Ferreira">
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-info">
+            <p class="proj-card-name">Studio</p>
+            <p class="proj-card-type">Design de Interiores</p>
+          </div>
+          <div class="proj-card-arrow">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ░░ MODAL PROJETO ░░ -->
+<div id="proj-modal" class="proj-modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="proj-modal-box">
+
+    <!-- Fechar -->
+    <button class="proj-modal-close" onclick="closeModal()" aria-label="Fechar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <!-- Slideshow -->
+    <div class="proj-modal-slider">
+      <div class="proj-modal-slides" id="modal-slides"></div>
+
+      <!-- Navegação -->
+      <button class="proj-modal-nav prev" onclick="slideNav(-1)" aria-label="Anterior">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="proj-modal-nav next" onclick="slideNav(1)" aria-label="Próxima">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- Dots -->
+      <div class="proj-modal-dots" id="modal-dots"></div>
+
+
+    </div>
+
+    <!-- Info -->
+    <div class="proj-modal-info">
+      <div class="proj-modal-meta">
+        <p class="proj-modal-name" id="modal-name"></p>
+        <p class="proj-modal-type" id="modal-type"></p>
+      </div>
+      <div class="proj-modal-desc" id="modal-desc"></div>
+      <a id="modal-whats" href="#" target="_blank" rel="noopener noreferrer" class="proj-modal-whats">
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Solicitar orçamento pelo WhatsApp
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ░░ PROCESSO ░░ -->
+<section class="processo" id="processo">
+  <div class="section-inner">
+    <h2 class="section-title mobile-center fade-up">Do conceito ao <em>executivo</em></h2>
+
+    <div class="processo-grid">
+      <div class="processo-steps">
+
+        <div class="passo fade-up">
+          <div class="passo-num">01</div>
+          <div class="passo-content">
+            <h3 class="passo-title">Briefing e Diagnóstico</h3>
+            <p class="passo-desc">Conversamos sobre suas necessidades, sonhos e expectativas. Entendemos o terreno, o programa e os condicionantes do projeto.</p>
+          </div>
+        </div>
+
+        <div class="passo fade-up">
+          <div class="passo-num">02</div>
+          <div class="passo-content">
+            <h3 class="passo-title">Estudo Preliminar</h3>
+            <p class="passo-desc">Desenvolvemos as primeiras propostas volumétricas e espaciais, traduzindo suas visões em soluções criativas e funcionais.</p>
+          </div>
+        </div>
+
+        <div class="passo fade-up">
+          <div class="passo-num">03</div>
+          <div class="passo-content">
+            <h3 class="passo-title">Anteprojeto</h3>
+            <p class="passo-desc">Refinamos a solução escolhida com detalhes de materiais, volumetria e ambientação: planos, cortes, elevações e perspectivas 3D.</p>
+          </div>
+        </div>
+
+        <div class="passo fade-up">
+          <div class="passo-num">04</div>
+          <div class="passo-content">
+            <h3 class="passo-title">Projeto Executivo</h3>
+            <p class="passo-desc">Documentação técnica completa para a execução: plantas, detalhamentos, especificações de materiais e caderno de acabamentos.</p>
+          </div>
+        </div>
+
+        <div class="passo fade-up">
+          <div class="passo-num">05</div>
+          <div class="passo-content">
+            <h3 class="passo-title">Suporte ao Projeto</h3>
+            <p class="passo-desc">Disponibilidade para esclarecimentos técnicos durante a execução da obra, garantindo que o projeto seja fielmente executado pela construtora do cliente.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="processo-aside fade-up">
+        <p class="processo-aside-quote">"Transformar seu espaço em um ambiente único e alinhado às suas expectativas!"</p>
+        <p class="processo-aside-sub">Cada projeto é desenvolvido de forma personalizada, do início ao fim, com atenção, dedicação e excelência em cada detalhe.</p>
+        <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="processo-aside-cta">
+          Iniciar meu projeto
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ CONTATO ░░ -->
+<section class="contato" id="contato">
+  <div class="section-inner">
+    <div class="contato-info fade-up">
+
+      <div class="contato-items-row">
+        <div class="contato-item">
+          <span class="contato-item-label">Instagram</span>
+          <a href="https://www.instagram.com/arq.iltonferreira/" target="_blank" rel="noopener noreferrer" class="contato-item-value">@arq.iltonferreira</a>
+        </div>
+
+        <div class="contato-item">
+          <span class="contato-item-label">WhatsApp</span>
+          <a href="https://wa.me/554896982800" target="_blank" rel="noopener noreferrer" class="contato-item-value">(48) 9698-2800</a>
+        </div>
+
+        <div class="contato-item">
+          <span class="contato-item-label">E-mail</span>
+          <a data-mail="arqiltonferreira" data-domain="gmail.com" href="javascript:void(0)" class="contato-item-value">arqiltonferreira@gmail.com</a>
+        </div>
+
+        <div class="contato-item">
+          <span class="contato-item-label">Localização</span>
+          <span class="contato-item-value">Imbituba – SC</span>
+        </div>
+      </div>
+
+      <div class="contato-socials">
+        <a href="https://www.instagram.com/arq.iltonferreira/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/554896982800" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+          </svg>
+        </a>
+        <a data-mail="arqiltonferreira" data-domain="gmail.com" href="javascript:void(0)" class="social-link" aria-label="E-mail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FAQ ░░ -->
+<section style="background:var(--cream-mid);padding:5rem 2rem" id="faq">
+  <div class="section-inner">
+    <h2 class="section-title mobile-center fade-up" style="margin-bottom:2.5rem">Perguntas <em>frequentes</em></h2>
+    <div style="display:flex;flex-direction:column;gap:0" class="faq-list">
+
+      <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
+        <summary style="font-size:14px;font-weight:400;letter-spacing:0.02em;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Quanto custa um projeto arquitetônico?
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O valor de um projeto arquitetônico varia conforme o tipo, residencial, comercial ou de interiores, a área total e o nível de detalhamento necessário. Após uma conversa inicial para entender o escopo, é elaborada uma proposta personalizada com todas as etapas e entregas previstas.</p>
+      </details>
+
+      <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
+        <summary style="font-size:14px;font-weight:400;letter-spacing:0.02em;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          O que está incluído em um projeto arquitetônico?
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">Um projeto arquitetônico completo inclui estudo preliminar, anteprojeto com perspectivas em 3D, plantas baixas, cortes, elevações, especificação de materiais e projeto executivo com todos os detalhamentos necessários para a execução da obra. Projetos para aprovação na prefeitura também incluem a documentação técnica exigida pelos órgãos competentes.</p>
+      </details>
+
+      <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
+        <summary style="font-size:14px;font-weight:400;letter-spacing:0.02em;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Quanto tempo leva para desenvolver um projeto residencial?
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O prazo de um projeto residencial depende da complexidade e do tamanho da edificação. Em média, o processo completo, do estudo preliminar ao projeto executivo, leva entre 60 e 120 dias. Projetos de arquitetura de interiores ou consultorias pontuais podem ter prazos menores, definidos caso a caso.</p>
+      </details>
+
+      <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
+        <summary style="font-size:14px;font-weight:400;letter-spacing:0.02em;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Como funciona o processo de projeto arquitetônico?
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O processo começa com uma reunião para entender as necessidades do cliente, seguida pelo estudo preliminar, desenvolvimento do anteprojeto com imagens em 3D e elaboração do projeto executivo completo. Cada etapa é desenvolvida com atenção aos detalhes para garantir segurança e qualidade durante a execução da obra.</p>
+      </details>
+
+      <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
+        <summary style="font-size:14px;font-weight:400;letter-spacing:0.02em;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Quanto custa contratar um arquiteto em Imbituba?
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O valor para contratar um arquiteto em Imbituba varia conforme o tamanho, a complexidade e as necessidades de cada projeto. Após uma conversa inicial e análise do escopo, é possível elaborar uma proposta personalizada, considerando todas as etapas necessárias para o desenvolvimento do trabalho.</p>
+      </details>
+
+      <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
+        <summary style="font-size:14px;font-weight:400;letter-spacing:0.02em;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Quanto custa um projeto residencial?
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O investimento em um projeto residencial depende de fatores como área construída, padrão do imóvel e nível de detalhamento necessário. Cada projeto é desenvolvido de forma exclusiva, buscando proporcionar conforto, funcionalidade e aproveitamento inteligente dos espaços.</p>
+      </details>
+
+      <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
+        <summary style="font-size:14px;font-weight:400;letter-spacing:0.02em;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          O escritório atende Praia do Rosa?
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">Sim. O escritório atende clientes em Praia do Rosa, Imbituba, Garopaba, Laguna e outras cidades do litoral sul de Santa Catarina. Os projetos podem ser realizados tanto presencialmente quanto de forma remota, mantendo acompanhamento próximo em todas as fases do trabalho.</p>
+      </details>
+
+      <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
+        <summary style="font-size:14px;font-weight:400;letter-spacing:0.02em;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          O arquiteto acompanha a obra?
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O escritório oferece suporte técnico durante a execução da obra, esclarecendo dúvidas e garantindo que o projeto arquitetônico seja fielmente executado. O acompanhamento presencial pode ser combinado conforme a necessidade e a localização do projeto, atendendo clientes em Imbituba, Garopaba, Praia do Rosa, Laguna, Tubarão e Jaguaruna.</p>
+      </details>
+
+      <details style="border-top:1px solid rgba(61,79,62,0.12);border-bottom:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
+        <summary style="font-size:14px;font-weight:400;letter-spacing:0.02em;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Faz projeto para aprovação na prefeitura?
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">Sim. Os projetos são desenvolvidos de acordo com as normas e legislações vigentes, incluindo toda a documentação necessária para aprovação junto à prefeitura e demais órgãos competentes. O objetivo é garantir que a obra seja executada de forma regularizada e com segurança.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer>
+  <p class="footer-copy">© 2026 Ilton Ferreira · CAU/BR A245753-9 — Arquitetura e Interiores · Imbituba, SC</p>
+  <p class="footer-dev">Website desenvolvido por <a href="https://amplifying.com.br/servicos" target="_blank" rel="noopener noreferrer" class="footer-dev-link">AMPLIFYING</a></p>
+</footer>
+
+<!-- ░░ WHATSAPP FLOAT ░░ -->
+<a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os." target="_blank" rel="noopener noreferrer" class="whats-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+// ── E-MAIL ANTI-SCRAPER ──
+document.querySelectorAll('a[data-mail]').forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.location.href = 'mailto:' + el.dataset.mail + '@' + el.dataset.domain;
+  });
+});
+
+// ── HAMBURGER ──
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('mobile-menu');
+ham.addEventListener('click', () => {
+  ham.classList.toggle('open');
+  mob.classList.toggle('open');
+});
+document.querySelectorAll('.mobile-link').forEach(l => {
+  l.addEventListener('click', () => {
+    ham.classList.remove('open');
+    mob.classList.remove('open');
+  });
+});
+
+// ── TICKER ──
+const words = [
+  'Arquitetura','Interiores','Minimalismo','Sofisticação','Conforto',
+  'Funcionalidade','Sustentabilidade','Design','Residencial','Elegância',
+  'Iluminação','Materiais Nobres','Contemporâneo','Aconchego','Detalhes',
+  'Projeto Executivo','Paisagismo','Volumetria','Personalizado','Requinte'
+];
+const track = document.getElementById('ticker-track');
+[...words,...words].forEach((w,i) => {
+  const item = document.createElement('span');
+  item.className = 'ticker-item';
+  if (i > 0) {
+    const d = document.createElement('span');
+    d.className = 'ticker-diamond';
+    item.appendChild(d);
+  }
+  item.appendChild(document.createTextNode(w));
+  track.appendChild(item);
+});
+
+// ── HERO SLIDESHOW ──
+var heroCur = 0;
+var heroSlides = document.querySelectorAll('.hero-slide');
+var heroTotal = heroSlides.length;
+var heroDotsEl = document.getElementById('hero-dots');
+
+// Gerar dots dinamicamente (sincronizado com os slides reais)
+heroSlides.forEach(function(_, i) {
+  var dot = document.createElement('button');
+  dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+  dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+  dot.addEventListener('click', function() { heroGoSlide(i); });
+  heroDotsEl.appendChild(dot);
+});
+
+function heroGoSlide(n) {
+  heroCur = (n + heroTotal) % heroTotal;
+  document.getElementById('hero-slides').style.transform = 'translateX(-' + (heroCur * 100) + '%)';
+  document.querySelectorAll('.hero-dot').forEach(function(d, i) { d.classList.toggle('active', i === heroCur); });
+}
+
+var heroInterval;
+function heroStartAutoplay() {
+  clearInterval(heroInterval);
+  heroInterval = setInterval(function() { heroGoSlide(heroCur + 1); }, 4500);
+}
+if (!document.hidden) heroStartAutoplay();
+
+// Pausa quando a aba está em background (economiza CPU)
+document.addEventListener('visibilitychange', function() {
+  if (document.hidden) {
+    clearInterval(heroInterval);
+  } else {
+    heroStartAutoplay();
+  }
+});
+
+// ── SWIPE HERO (mobile) ──
+(function() {
+  var el = document.getElementById('hero-slides');
+  var startX = 0;
+  el.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+  el.addEventListener('touchend', function(e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) heroGoSlide(heroCur + (diff > 0 ? 1 : -1));
+  }, { passive: true });
+})();
+
+// ── FADE-UP OBSERVER ──
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// ── FAQ (animação abrir/fechar) ──
+document.querySelectorAll('.faq-list details').forEach(function(det) {
+  var summary = det.querySelector('summary');
+  var content = det.querySelector('p');
+
+  summary.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    if (det.hasAttribute('open')) {
+      // Fechando
+      det.classList.remove('is-open');
+      content.style.maxHeight = content.scrollHeight + 'px';
+      requestAnimationFrame(function() {
+        content.style.maxHeight = '0px';
+        content.style.opacity = '0';
+      });
+      content.addEventListener('transitionend', function onEnd() {
+        det.removeAttribute('open');
+        content.removeEventListener('transitionend', onEnd);
+      }, { once: true });
+    } else {
+      // Abrindo
+      det.setAttribute('open', '');
+      det.classList.add('is-open');
+      content.style.maxHeight = '0px';
+      content.style.opacity = '0';
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          content.style.opacity = '1';
+        });
+      });
+      content.addEventListener('transitionend', function onEnd() {
+        content.style.maxHeight = 'none';
+        content.removeEventListener('transitionend', onEnd);
+      }, { once: true });
+    }
+  });
+});
+
+// ── MODAL PROJETO ──
+const PROJECTS = [
+  {
+    name: 'Residência A & B',
+    type: 'Arquitetura Residencial',
+    desc: `<p>Este projeto destaca-se pelo design minimalista e elegante, valorizando linhas horizontais marcantes e materiais sofisticados. A volumetria expressiva, combinada com o uso de concreto aparente, madeira e pedra, cria uma composição equilibrada e atemporal.</p>`,
+    images: ['imagens/aeb1.jpg','imagens/aeb2.jpg']
+  },
+  {
+    name: 'Residência F & E',
+    type: 'Arquitetura Residencial',
+    desc: `<p>Projeto pensado em uma composição equilibrada entre materiais naturais e contemporâneos, com uma estética sofisticada e imponente. A volumetria destaca-se pelo uso de linhas retas, grandes panos de vidro e elementos que trazem profundidade e textura à fachada.</p>`,
+    images: ['imagens/fee1.jpg','imagens/fee2.jpg']
+  },
+  {
+    name: 'Studio I & R',
+    type: 'Design de Interiores',
+    desc: `<p>Projeto pensado com a ideia de unir funcionalidade e aconchego em um espaço compacto, sem abrir mão da sofisticação. A integração entre quarto, sala e cozinha proporciona fluidez e aproveitamento inteligente da área disponível, garantindo um ambiente mais amplo e convidativo.</p>`,
+    images: ['imagens/ier1.jpg','imagens/ier2.jpg']
+  },
+  {
+    name: 'Apto P & P',
+    type: 'Design de Interiores',
+    desc: `<p>Projeto desenvolvido para proporcionar elegância, conforto e funcionalidade em um espaço contemporâneo e acolhedor.</p>`,
+    images: ['imagens/pep1.jpg','imagens/pep2.jpg','imagens/pep3.jpg','imagens/pep4.jpg','imagens/pep5.jpg','imagens/pep6.jpg','imagens/pep7.jpg','imagens/pep8.jpg']
+  },
+  {
+    name: 'Residência C & S',
+    type: 'Arquitetura Residencial',
+    desc: `<p>Neste projeto, a área gourmet se conecta à piscina, criando uma atmosfera perfeita para receber, relaxar e aproveitar cada momento. A madeira traz aconchego, a pedra adiciona textura e o desenho da cobertura filtra a luz, criando sombras que transformam o ambiente ao longo do dia.</p>`,
+    images: ['imagens/ces1.jpg','imagens/ces2.jpg','imagens/ces3.jpg','imagens/ces4.jpg','imagens/ces5.jpg']
+  },
+  {
+    name: 'Residência A & P',
+    type: 'Arquitetura Residencial',
+    desc: `<p>Essa residência une linhas modernas, materiais atemporais e integração com a natureza para criar um espaço único, cheio de personalidade e harmonia. Cada detalhe foi pensado para proporcionar conforto, funcionalidade e beleza, da volumetria marcada ao paisagismo que valoriza o entorno.</p>
+           <p>Um verdadeiro refúgio urbano com identidade própria.</p>`,
+    images: ['imagens/aep1.jpg','imagens/aep2.jpg','imagens/aep3.jpg','imagens/aep4.jpg']
+  },
+  {
+    name: 'Cabana D & C',
+    type: 'Arquitetura Residencial',
+    desc: `<p>Um refúgio em meio à natureza, onde arquitetura e paisagem se conectam em perfeita harmonia. Com linhas modernas, materiais naturais e ampla iluminação, esse projeto foi pensado para oferecer conforto e integração total com o ambiente ao redor.</p>`,
+    images: ['imagens/dec1.jpg','imagens/dec2.jpg','imagens/dec3.jpg']
+  },
+  {
+    name: 'Residência J & K',
+    type: 'Arquitetura Residencial',
+    desc: `<p>Um refúgio integrado à natureza, onde o design leve e a estrutura bem planejada respeitam o relevo e proporcionam aconchego. A combinação de materiais naturais, como madeira e pedra, reforça a conexão com o entorno, criando um espaço que inspira bem-estar e tranquilidade.</p>`,
+    images: ['imagens/jek1.jpg','imagens/jek2.jpg','imagens/jek3.jpg']
+  },
+  {
+    name: 'Residência A & A',
+    type: 'Arquitetura Residencial',
+    desc: `<p>Projeto de design minimalista com linhas retas e volumes geométricos bem definidos. O uso de madeira e concreto cria um contraste sofisticado, enquanto o vidro amplia a conexão entre interior e exterior.</p>`,
+    images: ['imagens/aea1.jpg','imagens/aea2.jpg','imagens/aea3.jpg','imagens/aea4.jpg','imagens/aea5.jpg']
+  },
+  {
+    name: 'Studio',
+    type: 'Design de Interiores',
+    desc: `<p>Neste projeto de Studio, foi criada uma cozinha moderna e funcional, que se integra perfeitamente com a sala de estar, otimizando o espaço e trazendo mais praticidade ao dia a dia.</p>`,
+    images: ['imagens/studio1.jpg','imagens/studio2.jpg','imagens/studio3.jpg','imagens/studio4.jpg']
+  }
+];
+
+var modalCur = 0;
+var modalTotal = 0;
+
+function sanitizeText(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function openModal(idx) {
+  const p = PROJECTS[idx];
+  document.getElementById('modal-name').textContent = p.name;
+  document.getElementById('modal-type').textContent = p.type;
+  document.getElementById('modal-desc').innerHTML = p.desc;
+
+  const msg = encodeURIComponent('Olá, vim pelo site e tenho interesse no projeto ' + p.name + '. Gostaria de fazer um orçamento.');
+  document.getElementById('modal-whats').href = 'https://wa.me/554896982800?text=' + msg;
+
+  // Build slides
+  const slidesEl = document.getElementById('modal-slides');
+  const dotsEl   = document.getElementById('modal-dots');
+  slidesEl.innerHTML = '';
+  dotsEl.innerHTML   = '';
+
+  const imgs = p.images;
+
+  if (imgs.length === 0) {
+    modalTotal = 1;
+    // placeholder
+    slidesEl.innerHTML = `<div class="proj-modal-slide-placeholder">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>Fotos em breve</span>
+    </div>`;
+  } else {
+    modalTotal = imgs.length;
+    imgs.forEach((src, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'proj-modal-slide';
+      slide.innerHTML = '<img loading="lazy" src="' + src + '" alt="' + sanitizeText(p.name) + ' foto ' + (i+1) + '">';
+      slidesEl.appendChild(slide);
+
+      const dot = document.createElement('button');
+      dot.className = 'proj-modal-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Foto ' + (i+1));
+      dot.onclick = function(){ goModalSlide(i); };
+      dotsEl.appendChild(dot);
+    });
+  }
+
+  modalCur = 0;
+  updateModalSlider();
+  document.getElementById('proj-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // No desktop: truncar texto para nunca precisar de scroll
+  if (window.innerWidth >= 1024) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const descEl  = document.getElementById('modal-desc');
+        const infoEl  = descEl.closest('.proj-modal-info');
+        const metaEl  = infoEl.querySelector('.proj-modal-meta');
+        const whatsEl = infoEl.querySelector('.proj-modal-whats');
+
+        const infoH   = infoEl.clientHeight;
+        const metaH   = metaEl.offsetHeight;
+        const whatsH  = whatsEl.offsetHeight;
+        const gap     = 16 + 20; // margin-top desc + whats margin
+        const maxH    = Math.max(60, infoH - metaH - whatsH - gap);
+
+        descEl.style.maxHeight = maxH + 'px';
+        descEl.style.overflow  = 'hidden';
+
+        // Fade out na última linha se o texto foi cortado
+        if (descEl.scrollHeight > maxH) {
+          descEl.style.webkitMaskImage = 'linear-gradient(to bottom, black 60%, transparent 100%)';
+          descEl.style.maskImage       = 'linear-gradient(to bottom, black 60%, transparent 100%)';
+        } else {
+          descEl.style.webkitMaskImage = '';
+          descEl.style.maskImage       = '';
+        }
+      });
+    });
+  } else {
+    // Mobile/tablet: garante sem máscara
+    const descEl = document.getElementById('modal-desc');
+    descEl.style.maxHeight = '';
+    descEl.style.overflow  = '';
+    descEl.style.webkitMaskImage = '';
+    descEl.style.maskImage = '';
+  }
+}
+
+function closeModal() {
+  document.getElementById('proj-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('proj-modal')) closeModal();
+}
+
+function goModalSlide(n) {
+  modalCur = (n + modalTotal) % modalTotal;
+  updateModalSlider();
+}
+
+function slideNav(dir) { goModalSlide(modalCur + dir); }
+
+function updateModalSlider() {
+  document.getElementById('modal-slides').style.transform = 'translateX(-' + (modalCur * 100) + '%)';
+  document.querySelectorAll('.proj-modal-dot').forEach((d, i) => d.classList.toggle('active', i === modalCur));
+  const prevBtn = document.querySelector('.proj-modal-nav.prev');
+  const nextBtn = document.querySelector('.proj-modal-nav.next');
+  if (prevBtn) prevBtn.classList.toggle('hidden', modalTotal <= 1);
+  if (nextBtn) nextBtn.classList.toggle('hidden', modalTotal <= 1);
+}
+
+// Fechar com ESC
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+// ── SWIPE MODAL (mobile) ──
+(function() {
+  var el = document.getElementById('modal-slides');
+  var startX = 0;
+  el.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+  el.addEventListener('touchend', function(e) {
+    var diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) slideNav(diff > 0 ? 1 : -1);
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

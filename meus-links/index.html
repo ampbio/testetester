@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Ilton Ferreira Arquitetura &amp; Interiores — Imbituba, SC</title>
+<meta name="description" content="Arquitetura e design de interiores em Imbituba, SC. Soluções criativas, funcionais e sustentáveis para projetos residenciais e comerciais.">
+<meta name="keywords" content="arquitetura, interiores, design, Imbituba, Santa Catarina, projetos residenciais, Ilton Ferreira">
+<meta name="author" content="Ilton Ferreira">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (compartilhamento em redes sociais) -->
+<meta property="og:title" content="Ilton Ferreira Arquitetura &amp; Interiores">
+<meta property="og:description" content="Soluções arquitetônicas criativas, funcionais e sustentáveis em Imbituba, SC.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arqiltonferreira.com/meus-links/">
+<meta property="og:image" content="https://arqiltonferreira.com/meus-links/imagens/thumb.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ilton Ferreira Arquitetura &amp; Interiores">
+<meta name="twitter:description" content="Soluções arquitetônicas criativas, funcionais e sustentáveis em Imbituba, SC.">
+<meta name="twitter:image" content="https://arqiltonferreira.com/meus-links/imagens/thumb.png">
+
+<!-- Segurança -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://arqiltonferreira.com/meus-links/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="../imagens/logo.png">
+<link rel="apple-touch-icon" href="../imagens/logo.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green:       #3D4F3E;
+    --green-dark:  #2C3A2D;
+    --cream:       #F0EFE5;
+    --text:        #2C3A2D;
+    --text-muted:  #6B7A6C;
+  }
+
+  body {
+    background-color: var(--cream);
+    color: var(--text);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    opacity: 0;
+    animation: fadeInPage 1s ease forwards;
+  }
+
+  @keyframes fadeInPage {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body { animation: none; opacity: 1; }
+  }
+
+  /* ── Slideshow ── */
+  .slideshow-wrap {
+    background: var(--cream);
+    padding: 1.5rem 1.5rem 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .slideshow {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+    background: var(--green-dark);
+    border-radius: 6px 6px 0 0;
+    border: 1px solid rgba(61,79,62,0.3);
+    border-bottom: none;
+  }
+
+  .slideshow .slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.77,0,0.18,1);
+  }
+
+  .slideshow .slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slideshow .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Dots navigation */
+  .slide-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 2;
+  }
+
+  .slide-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(240,239,229,0.4);
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .slide-dot.active {
+    background: var(--cream);
+    transform: scale(1.25);
+  }
+
+  /* Prev / Next arrows */
+  .slide-prev, .slide-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(44,58,45,0.5);
+    color: var(--cream);
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background 0.2s;
+  }
+  .slide-prev:hover, .slide-next:hover { background: rgba(44,58,45,0.85); }
+  .slide-prev { left: 10px; }
+  .slide-next { right: 10px; }
+
+  /* ── Top bar ── */
+  .topbar-wrap {
+    background: var(--cream);
+    display: flex;
+    justify-content: center;
+    padding: 0 1.5rem;
+  }
+
+  .topbar {
+    background: var(--green);
+    padding: 1.75rem 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 0 0 6px 6px;
+    border: 1px solid rgba(61,79,62,0.3);
+    border-top: none;
+  }
+
+  .logo-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgba(240,239,229,0.18);
+    padding-right: 1.5rem;
+  }
+
+  .logo-img {
+    display: block;
+    width: 100%;
+    max-width: 110px;
+    height: auto;
+  }
+
+  .topbar-contact {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding-left: 0.25rem;
+  }
+
+  .topbar-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(240,239,229,0.82);
+    font-family: 'Jost', sans-serif;
+    font-size: 11.5px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .topbar-contact-item:hover { color: var(--cream); }
+
+  .topbar-contact-item svg {
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  /* ── Bio strip ── */
+  .bio-strip {
+    background: var(--cream);
+    padding: 1.75rem 1.5rem 0;
+    text-align: center;
+  }
+
+  .bio-text {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    letter-spacing: 0.02em;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  /* ── Ticker ── */
+  .ticker-wrap {
+    background: var(--cream);
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ticker {
+    width: 100%;
+    max-width: 420px;
+    overflow: hidden;
+    border-top: 1px solid rgba(61,79,62,0.18);
+    border-bottom: 1px solid rgba(61,79,62,0.18);
+    padding: 0.55rem 0;
+    position: relative;
+  }
+
+  .ticker::before,
+  .ticker::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 32px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .ticker::before { left: 0;  background: linear-gradient(to right, var(--cream), transparent); }
+  .ticker::after  { right: 0; background: linear-gradient(to left,  var(--cream), transparent); }
+
+  .ticker-track {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker-scroll 55s linear infinite;
+    width: max-content;
+  }
+
+  .ticker-track:hover { animation-play-state: paused; }
+
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 10.5px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding-right: 0.65rem;
+  }
+
+  .ticker-diamond {
+    width: 5px;
+    height: 5px;
+    background: var(--green);
+    transform: rotate(45deg);
+    opacity: 0.45;
+    flex-shrink: 0;
+  }
+
+  @keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── Links section ── */
+  .links {
+    padding: 1.75rem 1.5rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.95rem 1.25rem;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 13.5px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    position: relative;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  .btn:hover  { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0); }
+
+  .btn-primary {
+    background: var(--green);
+    color: var(--cream);
+    box-shadow: 0 2px 12px rgba(61,79,62,0.18);
+  }
+  .btn-primary:hover {
+    background: var(--green-dark);
+    box-shadow: 0 6px 24px rgba(61,79,62,0.28);
+  }
+  .btn-primary .btn-icon    { background: rgba(255,255,255,0.1); color: var(--cream); }
+  .btn-primary .btn-arrow   { color: rgba(240,239,229,0.55); }
+  .btn-primary .btn-sublabel{ color: rgba(240,239,229,0.6); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid rgba(61,79,62,0.28);
+  }
+  .btn-outline:hover {
+    background: rgba(61,79,62,0.05);
+    border-color: rgba(61,79,62,0.55);
+  }
+  .btn-outline .btn-icon    { background: rgba(61,79,62,0.08); color: var(--green); }
+  .btn-outline .btn-arrow   { color: var(--text-muted); }
+  .btn-outline .btn-sublabel{ color: var(--text-muted); }
+
+  .btn-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .btn-icon svg { width: 17px; height: 17px; display: block; }
+
+  .btn-content  { flex: 1; }
+  .btn-label    { display: block; font-size: 13.5px; font-weight: 500; }
+  .btn-sublabel { display: block; font-size: 11px; margin-top: 1px; letter-spacing: 0.01em; }
+  .btn-arrow    { font-size: 15px; flex-shrink: 0; }
+
+  /* ── Footer ── */
+  .footer {
+    background: var(--green);
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .footer-icon-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-icon-link:hover { color: var(--text); }
+
+  .footer-copy {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(240,239,229,0.7);
+    text-transform: uppercase;
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeUp   { from { opacity:0; transform:translateY(12px);  } to { opacity:1; transform:translateY(0); } }
+
+  .topbar    { animation: fadeDown 0.7s ease both; }
+  .bio-strip { animation: fadeUp 0.7s 0.15s ease both; }
+  .links     { animation: fadeUp 0.7s 0.25s ease both; }
+
+  /* ── Botão flutuante WhatsApp ── */
+  .whats-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 52px;
+    height: 52px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+    text-decoration: none;
+    z-index: 999;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .whats-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 24px rgba(37,211,102,0.55);
+  }
+  .whats-float svg { width: 26px; height: 26px; display: block; }
+</style>
+</head>
+<body>
+
+  <!-- ░░ BOTÃO FLUTUANTE WHATSAPP ░░ -->
+  <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20entrei%20em%20contato%20atrav%C3%A9s%20do%20seu%20biosite%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os%20de%20arquitetura%20e%20interiores.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="whats-float" aria-label="Entrar em contato pelo WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ░░ BARRA TOPO ░░ -->
+  <div style="background:var(--cream); display:flex; justify-content:center; padding:0 1.5rem;">
+    <div style="background:var(--green); text-align:center; padding:0.45rem 1rem; width:100%; max-width:420px; border-radius:0 0 4px 4px;">
+      <span style="font-family:'Jost',sans-serif; font-size:10.5px; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:rgba(240,239,229,0.7);">Imbituba – SC &nbsp;|&nbsp; Atendimento em toda a região</span>
+    </div>
+  </div>
+
+  <!-- ░░ SLIDESHOW ░░ -->
+  <div class="slideshow-wrap">
+  <div class="slideshow" id="slideshow" role="region" aria-label="Galeria de projetos">
+    <div class="slides" id="slides">
+      <div class="slide"><img src="../imagens/aeb1.jpg" alt="Residência A &amp; B — fachada principal"></div>
+      <div class="slide"><img src="../imagens/aeb2.jpg" alt="Residência A &amp; B — detalhe externo"></div>
+      <div class="slide"><img src="../imagens/fee1.jpg" alt="Residência F &amp; E — fachada"></div>
+      <div class="slide"><img src="../imagens/fee2.jpg" alt="Residência F &amp; E — vista lateral"></div>
+      <div class="slide"><img src="../imagens/ier1.jpg" alt="Studio I &amp; R — sala integrada"></div>
+      <div class="slide"><img src="../imagens/ier2.jpg" alt="Studio I &amp; R — cozinha"></div>
+      <div class="slide"><img src="../imagens/pep1.jpg" alt="Apto P &amp; P — sala de estar"></div>
+      <div class="slide"><img src="../imagens/pep2.jpg" alt="Apto P &amp; P — ambientes integrados"></div>
+      <div class="slide"><img src="../imagens/pep3.jpg" alt="Apto P &amp; P — detalhe de interiores"></div>
+      <div class="slide"><img src="../imagens/pep4.jpg" alt="Apto P &amp; P — quarto"></div>
+      <div class="slide"><img src="../imagens/ces1.jpg" alt="Residência C &amp; S — área gourmet"></div>
+      <div class="slide"><img src="../imagens/ces2.jpg" alt="Residência C &amp; S — piscina"></div>
+      <div class="slide"><img src="../imagens/aep1.jpg" alt="Residência A &amp; P — fachada"></div>
+      <div class="slide"><img src="../imagens/aep2.jpg" alt="Residência A &amp; P — paisagismo"></div>
+      <div class="slide"><img src="../imagens/dec1.jpg" alt="Cabana D &amp; C — vista externa"></div>
+      <div class="slide"><img src="../imagens/dec2.jpg" alt="Cabana D &amp; C — integração com a natureza"></div>
+      <div class="slide"><img src="../imagens/jek1.jpg" alt="Residência J &amp; K — fachada"></div>
+      <div class="slide"><img src="../imagens/jek2.jpg" alt="Residência J &amp; K — detalhe"></div>
+      <div class="slide"><img src="../imagens/aea1.jpg" alt="Residência A &amp; A — volumetria"></div>
+      <div class="slide"><img src="../imagens/studio1.jpg" alt="Studio — cozinha integrada"></div>
+    </div>
+
+    <button class="slide-prev" onclick="moveSlide(-1)" aria-label="Slide anterior">&#8249;</button>
+    <button class="slide-next" onclick="moveSlide(1)"  aria-label="Próximo slide">&#8250;</button>
+
+    <div class="slide-dots" id="dots" role="tablist" aria-label="Navegação do slideshow">
+      <button class="slide-dot active" onclick="goSlide(0)"  aria-label="Slide 1"  role="tab" aria-selected="true"></button>
+      <button class="slide-dot" onclick="goSlide(1)"  aria-label="Slide 2"  role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(2)"  aria-label="Slide 3"  role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(3)"  aria-label="Slide 4"  role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(4)"  aria-label="Slide 5"  role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(5)"  aria-label="Slide 6"  role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(6)"  aria-label="Slide 7"  role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(7)"  aria-label="Slide 8"  role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(8)"  aria-label="Slide 9"  role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(9)"  aria-label="Slide 10" role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(10)" aria-label="Slide 11" role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(11)" aria-label="Slide 12" role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(12)" aria-label="Slide 13" role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(13)" aria-label="Slide 14" role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(14)" aria-label="Slide 15" role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(15)" aria-label="Slide 16" role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(16)" aria-label="Slide 17" role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(17)" aria-label="Slide 18" role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(18)" aria-label="Slide 19" role="tab" aria-selected="false"></button>
+      <button class="slide-dot" onclick="goSlide(19)" aria-label="Slide 20" role="tab" aria-selected="false"></button>
+    </div>
+  </div>
+  </div><!-- /.slideshow-wrap -->
+
+  <!-- ░░ TOP BAR — green header ░░ -->
+  <div class="topbar-wrap">
+  <div class="topbar">
+    <div class="logo-wrap">
+      <img src="../imagens/logo.png" alt="Ilton Ferreira Arquitetura" class="logo-img" width="110">
+    </div>
+    <div class="topbar-contact">
+      <a href="tel:+554896982800" class="topbar-contact-item" aria-label="Ligar para (48) 9698-2800">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        (48) 9698-2800
+      </a>
+      <a href="https://www.instagram.com/arq.iltonferreira/" target="_blank" rel="noopener noreferrer" class="topbar-contact-item" aria-label="Instagram @arq.iltonferreira (abre em nova aba)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+        </svg>
+        @arq.iltonferreira
+      </a>
+      <a href="mailto:arqiltonferreira@gmail.com" class="topbar-contact-item" aria-label="Enviar e-mail para arqiltonferreira@gmail.com">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M2 7l10 7 10-7"/>
+        </svg>
+        arqiltonferreira@gmail.com
+      </a>
+    </div>
+  </div><!-- /.topbar -->
+  </div><!-- /.topbar-wrap -->
+
+  <!-- ░░ TICKER ░░ -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker">
+      <div class="ticker-track" id="ticker-track"></div>
+    </div>
+  </div>
+
+  <!-- ░░ BIO STRIP ░░ -->
+  <div class="bio-strip">
+    <p class="bio-text">Sempre buscando traduzir suas necessidades e visões em soluções arquitetônicas criativas, funcionais e sustentáveis.</p>
+  </div>
+
+  <!-- ░░ LINKS ░░ -->
+  <main class="links">
+
+    <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20entrei%20em%20contato%20atrav%C3%A9s%20do%20seu%20biosite%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os%20de%20arquitetura%20e%20interiores.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+      <span class="btn-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+        </svg>
+      </span>
+      <span class="btn-content">
+        <span class="btn-label">Faça seu orçamento aqui!</span>
+        <span class="btn-sublabel">Solicite uma proposta personalizada</span>
+      </span>
+      <span class="btn-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="https://arqiltonferreira.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+      <span class="btn-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+        </svg>
+      </span>
+      <span class="btn-content">
+        <span class="btn-label">Conheça meu trabalho</span>
+        <span class="btn-sublabel">Visite meu site para mais</span>
+      </span>
+      <span class="btn-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="https://www.instagram.com/arq.iltonferreira/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+      <span class="btn-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="btn-content">
+        <span class="btn-label">Visite meu Instagram</span>
+        <span class="btn-sublabel">Acompanhe os bastidores dos projetos</span>
+      </span>
+      <span class="btn-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <a href="https://maps.app.goo.gl/yWryU7sRtJKabedZ9" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+      <span class="btn-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </span>
+      <span class="btn-content">
+        <span class="btn-label">Minha localização</span>
+        <span class="btn-sublabel">Veja onde estamos no mapa</span>
+      </span>
+      <span class="btn-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <!-- Mapa -->
+    <div style="border-radius:4px; overflow:hidden; border:1px solid rgba(61,79,62,0.2); line-height:0;">
+      <iframe
+        title="Localização Ilton Ferreira Arquitetura — Imbituba, SC"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d878.6975481465902!2d-48.66537663042452!3d-28.24404711705947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9526b59143069117%3A0xe251ee5942871bc6!2sR.%20Odomiro%20Ferreira%2C%2040%20-%20Paes%20Leme%2C%20Imbituba%20-%20SC%2C%2088780-000!5e0!3m2!1spt-BR!2sbr!4v1781903301019!5m2!1spt-BR!2sbr"
+        width="100%" height="180" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </main>
+
+  <!-- ░░ ÍCONES SOCIAIS ░░ -->
+  <div style="background:var(--cream); display:flex; justify-content:center; gap:2rem; padding:0.75rem 1.5rem;">
+    <a href="https://www.instagram.com/arq.iltonferreira/" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="Instagram (abre em nova aba)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+      </svg>
+      Instagram
+    </a>
+    <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20entrei%20em%20contato%20atrav%C3%A9s%20do%20seu%20biosite%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os%20de%20arquitetura%20e%20interiores.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="footer-icon-link" aria-label="WhatsApp (abre em nova aba)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;" aria-hidden="true">
+        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+      </svg>
+      WhatsApp
+    </a>
+  </div>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <p class="footer-copy">© 2026 Ilton Ferreira — Arquitetura e Interiores</p>
+    <p class="footer-copy" style="margin-top:0.4rem;">Website desenvolvido por <a href="https://amplifyingmkt.com.br" target="_blank" rel="noopener noreferrer" style="color:#FF6B1A; text-decoration:none; font-weight:500; letter-spacing:0.15em;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">AMPLIFYING</a></p>
+  </footer>
+
+<script>
+  // ── Ticker ──
+  const words = [
+    'Arquitetura','Interiores','Minimalismo','Sofisticação','Conforto',
+    'Funcionalidade','Sustentabilidade','Design','Residencial','Elegância',
+    'Iluminação','Materiais Nobres','Contemporâneo','Aconchego','Detalhes',
+    'Projeto Executivo','Paisagismo','Volumetria','Personalizado','Requinte'
+  ];
+
+  const track = document.getElementById('ticker-track');
+  [...words, ...words].forEach(function(w, i) {
+    const item = document.createElement('span');
+    item.className = 'ticker-item';
+    if (i > 0) {
+      const diamond = document.createElement('span');
+      diamond.className = 'ticker-diamond';
+      item.appendChild(diamond);
+    }
+    item.appendChild(document.createTextNode(w));
+    track.appendChild(item);
+  });
+
+  // ── Slideshow ──
+  var current = 0;
+  var total = document.querySelectorAll('.slide').length;
+  var autoplay = setInterval(function() { moveSlide(1); }, 4000);
+  var resumeTimer = null;
+
+  function goSlide(n) {
+    current = (n + total) % total;
+    document.getElementById('slides').style.transform = 'translateX(-' + (current * 100) + '%)';
+    var dots = document.querySelectorAll('.slide-dot');
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
+      d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+    });
+  }
+
+  function moveSlide(dir) { goSlide(current + dir); }
+
+  // Pausa o autoplay ao interagir manualmente e retoma após 6s
+  document.querySelectorAll('.slide-prev, .slide-next, .slide-dot').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      clearInterval(autoplay);
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(function() {
+        autoplay = setInterval(function() { moveSlide(1); }, 4000);
+      }, 6000);
+    });
+  });
+</script>
+</body>
+</html>
