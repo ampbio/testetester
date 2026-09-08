@@ -427,18 +427,6 @@ nav {
   z-index: 2;
 }
 
-.hero-dot {
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: rgba(240,239,229,0.3);
-  border: none; cursor: pointer; padding: 0;
-  transition: background 0.2s, transform 0.2s;
-}
-.hero-dot.active {
-  background: var(--cream);
-  transform: scale(1.3);
-}
-
 
 /* ── TICKER ── */
 .ticker-section {
@@ -1240,10 +1228,7 @@ footer {
   .section-title { font-size: 40px; }
 }
 
-/* Em paisagem, prioriza a foto inteira em vez de recortá-la para preencher o hero. */
-@media (max-width: 1024px) and (orientation: landscape) {
-  .hero-slide img { object-fit: contain; }
-}
+/* Removido: exceção de paisagem que forçava object-fit:contain (causava barras verdes indesejadas). */
 
 /* Tablet retrato: 780px. O layout permanece empilhado para leitura confortável. */
 @media (min-width: 881px) and (max-width: 1024px) {
@@ -1255,8 +1240,12 @@ footer {
 @media (min-width: 1025px) and (max-width: 1200px) {
   .portfolio-grid { justify-content: flex-start; }
   .portfolio-grid .proj-card { flex: 0 0 calc((100% - 1rem) / 2); }
-  .hero-title { font-size: clamp(42px, 4.8vw, 58px); }
+  .hero-left { padding: 4rem 3rem 3rem; }
+  .hero-title { font-size: 48px; }
   .section-title { font-size: 48px; }
+  .hero-actions { flex-direction: column; gap: 0.75rem; }
+  .btn-hero-primary,
+  .btn-hero-outline { width: 100%; }
 }
 
 /* Do tablet paisagem em diante, mostra a foto inteira no hero. */
@@ -1269,13 +1258,15 @@ footer {
     margin-right: auto;
   }
   .hero-right {
-    padding-top: 24px;
-    padding-bottom: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
     background: var(--green-dark);
   }
   .hero-slide img {
-    object-fit: contain;
-    background: var(--green-dark);
+    object-fit: cover;
+  }
+  .hero-sub {
+    max-width: 100%;
   }
 }
 
@@ -1292,7 +1283,7 @@ footer {
   .section-title { font-size: 52px; }
   .hero-actions { gap: 0.75rem; }
   .btn-hero-primary,
-  .btn-hero-outline { width: 200px; }
+  .btn-hero-outline { flex: 1; }
 }
 
 /* Desktop e telas amplas: 1280px e grid de 12 colunas (cartões em 3 colunas cada). */
@@ -1302,7 +1293,7 @@ footer {
   .section-title { font-size: 56px; }
   .hero-actions { gap: 0.75rem; }
   .btn-hero-primary,
-  .btn-hero-outline { width: 200px; }
+  .btn-hero-outline { flex: 1; }
 }
 
 /* ── MODAL PROJETO ── */
@@ -1747,7 +1738,7 @@ footer {
   <!-- Esquerda -->
   <div class="hero-left">
     <p class="hero-eyebrow">Imbituba e Região, SC</p>
-    <h1 class="hero-title">Projetos Arquitetônicos<br class="hero-break">em Imbituba, <em>Garopaba<br class="hero-break">e Região</em></h1>
+    <h1 class="hero-title">Projetos Arquitetônicos <br class="hero-break">em Imbituba, <em>Garopaba <br class="hero-break">e Região</em></h1>
     <p class="hero-sub">Sempre buscando traduzir suas necessidades e visões em soluções arquitetônicas criativas, funcionais e sustentáveis.</p>
     <div class="hero-actions">
       <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="btn-hero-primary" style="white-space:nowrap">
@@ -2394,21 +2385,10 @@ const track = document.getElementById('ticker-track');
 var heroCur = 0;
 var heroSlides = document.querySelectorAll('.hero-slide');
 var heroTotal = heroSlides.length;
-var heroDotsEl = document.getElementById('hero-dots');
-
-// Gerar dots dinamicamente (sincronizado com os slides reais)
-heroSlides.forEach(function(_, i) {
-  var dot = document.createElement('button');
-  dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
-  dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-  dot.addEventListener('click', function() { heroGoSlide(i); });
-  heroDotsEl.appendChild(dot);
-});
 
 function heroGoSlide(n) {
   heroCur = (n + heroTotal) % heroTotal;
   document.getElementById('hero-slides').style.transform = 'translateX(-' + (heroCur * 100) + '%)';
-  document.querySelectorAll('.hero-dot').forEach(function(d, i) { d.classList.toggle('active', i === heroCur); });
 }
 
 var heroInterval;
