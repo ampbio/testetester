@@ -710,7 +710,7 @@ section {
 }
 
 .proj-card {
-  flex: 0 0 calc((100% - 6rem) / 4);
+  flex: 0 0 calc((100% - 3 * var(--layout-gap)) / 4);
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -1194,7 +1194,7 @@ footer {
   .servicos-grid { grid-template-columns: repeat(2, 1fr); }
 
   .portfolio-grid { justify-content: flex-start; }
-  .portfolio-grid .proj-card { flex: 0 0 calc((100% - 1rem) / 2); }
+  .portfolio-grid .proj-card { flex: 0 0 calc((100% - var(--layout-gap)) / 2); }
   .portfolio-grid .proj-card .proj-card-img { aspect-ratio: 16 / 9; }
   .portfolio-header { flex-direction: column; align-items: flex-start; }
 
@@ -1232,16 +1232,16 @@ footer {
 
 /* Tablet retrato: 780px. O layout permanece empilhado para leitura confortável. */
 @media (min-width: 881px) and (max-width: 1024px) {
-  .hero-title { font-size: 48px; }
+  .hero-title { font-size: 52px; }
   .section-title { font-size: 44px; }
 }
 
 /* Tablet paisagem: 924px. Portfólio usa dois cartões por linha (3 de 6 colunas). */
 @media (min-width: 1025px) and (max-width: 1200px) {
   .portfolio-grid { justify-content: flex-start; }
-  .portfolio-grid .proj-card { flex: 0 0 calc((100% - 1rem) / 2); }
+  .portfolio-grid .proj-card { flex: 0 0 calc((100% - var(--layout-gap)) / 2); }
   .hero-left { padding: 4rem 3rem 3rem; }
-  .hero-title { font-size: 48px; }
+  .hero-title { font-size: 56px; }
   .section-title { font-size: 48px; }
   .hero-actions { flex-direction: column; gap: 0.75rem; }
   .btn-hero-primary,
@@ -1256,6 +1256,11 @@ footer {
     max-width: var(--content-max-width);
     margin-left: auto;
     margin-right: auto;
+    /* Altura acompanha o conteúdo em toda a faixa lado a lado, evitando
+       salto de 100vh entre Tablet Paisagem/Notebook/Desktop. */
+    min-height: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
   .hero-right {
     padding-top: 0;
@@ -1272,14 +1277,8 @@ footer {
 
 /* Notebook: 1100px, com escala intermediária antes do desktop de 1280px. */
 @media (min-width: 1201px) and (max-width: 1366px) {
-  /* Evita o painel verde em altura de viewport: o hero acompanha o conteúdo. */
-  .hero {
-    min-height: auto;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
   .hero-left { padding: 4rem 3rem 3rem; }
-  .hero-title { font-size: 48px; }
+  .hero-title { font-size: 60px; }
   .section-title { font-size: 52px; }
   .hero-actions { gap: 0.75rem; }
   .btn-hero-primary,
@@ -1289,7 +1288,7 @@ footer {
 /* Desktop e telas amplas: 1280px e grid de 12 colunas (cartões em 3 colunas cada). */
 @media (min-width: 1367px) {
   .hero-left { padding: 4rem 3rem 3rem; }
-  .hero-title { font-size: 48px; }
+  .hero-title { font-size: 64px; }
   .section-title { font-size: 56px; }
   .hero-actions { gap: 0.75rem; }
   .btn-hero-primary,
