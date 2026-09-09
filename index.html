@@ -116,8 +116,9 @@ nav {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(61,79,62,0.12);
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.35s ease;
 }
+nav.nav-hidden { transform: translateY(-100%); }
 
 .nav-inner {
   width: 100%;
@@ -128,7 +129,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: height 0.3s;
 }
+nav.scrolled .nav-inner { height: 52px; }
 
 .nav-logo {
   display: flex;
@@ -257,6 +260,8 @@ nav {
   grid-template-columns: 1fr 1fr;
   position: relative;
   overflow: hidden;
+  /* Reserva espaço da navbar fixa, pra ela não sobrepor o Hero. */
+  margin-top: 24px;
 }
 
 .hero-left {
@@ -569,49 +574,53 @@ section {
 
 .sobre-details {
   margin-top: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--layout-gap);
 }
 
 .sobre-detail {
+  background: var(--green-dark);
+  color: var(--cream);
   display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 2px;
   font-size: 12.5px;
   font-weight: 300;
-  color: var(--text-muted);
+  line-height: 1.7;
   letter-spacing: 0.02em;
 }
 
-.sobre-detail::before {
-  content: '';
-  display: block;
-  width: 14px; height: 1px;
-  background: var(--green);
-  opacity: 0.5;
-  margin-top: 0.65em;
-  flex-shrink: 0;
+@media (max-width: 767px) {
+  .sobre-details { grid-template-columns: 1fr; }
 }
 
 .sobre-cta {
   margin-top: 3rem;
-  display: inline-flex;
+  display: flex;
+  width: 100%;
   align-items: center;
-  gap: 0.75rem;
+  justify-content: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: var(--green);
   text-decoration: none;
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--green);
-  border-bottom: 1px solid rgba(61,79,62,0.25);
-  padding-bottom: 0.35rem;
-  transition: color 0.2s, border-color 0.2s;
+  padding: 0.9rem 1.75rem;
+  border-radius: 2px;
+  border: 1px solid rgba(61,79,62,0.25);
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }
 .sobre-cta:hover {
-  color: var(--green-dark);
   border-color: var(--green);
+  color: var(--green-dark);
+  transform: translateY(-1px);
 }
 
 /* ── SERVIÇOS ── */
@@ -676,29 +685,43 @@ section {
 }
 
 .portfolio-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 2rem;
+  text-align: center;
   margin-bottom: 3.5rem;
 }
 
 .portfolio-link {
+  margin-top: 3.5rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: var(--green);
+  text-decoration: none;
   font-size: 10.5px;
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--text-muted);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-  transition: color 0.2s;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid rgba(61,79,62,0.2);
+  padding: 0.9rem 1.75rem;
+  border-radius: 2px;
+  border: 1px solid rgba(61,79,62,0.25);
+  transition: border-color 0.2s, color 0.2s, transform 0.2s;
 }
-.portfolio-link:hover { color: var(--text); }
+.portfolio-link:hover {
+  border-color: var(--green);
+  color: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+/* Notebook/Desktop: grid de 4 colunas — botão do tamanho de 2 cards, centralizado. */
+@media (min-width: 1201px) {
+  .portfolio-link {
+    width: calc(50% - var(--layout-gap) / 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 
 /* Portfolio grid */
@@ -808,7 +831,6 @@ section {
     padding-right: 1.5rem;
   }
   .portfolio-header {
-    gap: 1rem;
     margin-bottom: 2rem;
   }
   .portfolio-grid {
@@ -864,47 +886,46 @@ section {
 }
 
 .processo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--layout-gap);
-  align-items: start;
   margin-top: 3.5rem;
 }
 
 .processo-steps {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--layout-gap);
 }
 
 .passo {
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 1.5rem;
-  padding: 1.75rem 0;
-  border-bottom: 1px solid rgba(61,79,62,0.1);
-  align-items: start;
-  transition: background 0.2s;
+  flex: 0 0 100%;
+  background: var(--cream);
+  padding: 2rem;
+  border-radius: 2px;
+  transition: transform 0.2s;
 }
 
-.passo:first-child { padding-top: 0; }
-.passo:last-child { border-bottom: none; }
+.passo-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.85rem;
+}
 
 .passo-num {
   font-family: 'DM Serif Display', serif;
-  font-size: 36px;
+  font-size: 26px;
   font-weight: 300;
   font-style: italic;
-  color: rgba(61,79,62,0.2);
+  color: rgba(61,79,62,0.3);
   line-height: 1;
-  text-align: right;
+  flex-shrink: 0;
 }
 
 .passo-title {
   font-family: 'DM Serif Display', serif;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--text);
-  margin-bottom: 0.5rem;
 }
 
 .passo-desc {
@@ -914,14 +935,33 @@ section {
   font-weight: 300;
 }
 
-.processo-aside {
-  position: sticky;
-  top: 6rem;
+@media (min-width: 768px) {
+  .passo { flex: 0 0 calc((100% - var(--layout-gap)) / 2); }
+}
+
+@media (min-width: 1025px) {
+  .passo { flex: 0 0 calc((100% - 2 * var(--layout-gap)) / 3); }
+}
+
+@media (min-width: 1367px) {
+  .passo { flex: 0 0 calc((100% - 4 * var(--layout-gap)) / 5); }
+}
+
+/* Banner de CTA, abaixo dos cards de passos — empilhado e centralizado. */
+.processo-banner {
+  margin-top: var(--layout-gap);
   background: var(--green-dark);
   border-radius: 2px;
-  padding: 3rem;
+  padding: 2.5rem;
   color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
 }
+
+.processo-banner-text { width: 100%; }
 
 .processo-aside-quote {
   font-family: 'DM Serif Display', serif;
@@ -930,7 +970,7 @@ section {
   font-style: italic;
   line-height: 1.4;
   color: rgba(240,239,229,0.8);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -940,7 +980,8 @@ section {
   color: rgba(240,239,229,0.4);
   line-height: 1.75;
   letter-spacing: 0.02em;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.75rem;
+  max-width: 480px;
 }
 
 .processo-aside-cta {
@@ -949,6 +990,7 @@ section {
   justify-content: center;
   gap: 0.6rem;
   width: 100%;
+  max-width: 280px;
   background: rgba(240,239,229,0.1);
   color: rgba(240,239,229,0.75);
   text-decoration: none;
@@ -1132,6 +1174,12 @@ footer {
     grid-template-columns: 1fr;
     grid-template-rows: clamp(220px, 50vw, 420px) 1fr;
     min-height: auto;
+    /* Aqui embaixo (mobile/tablet) usa a altura cheia da navbar (64px),
+       diferente do desktop (32px), pra não sobrepor o slideshow. */
+    margin-top: 64px;
+    /* Zera o padding herdado da regra genérica 'section', para o
+       fundo/imagem realmente ocuparem a largura e o topo totais. */
+    padding: 0;
   }
 
   .hero-right { grid-row: 1; }
@@ -1173,8 +1221,7 @@ footer {
     width: 100%;
   }
 
-  .sobre-grid,
-  .processo-grid { grid-template-columns: 1fr; gap: var(--layout-gap); }
+  .sobre-grid { grid-template-columns: 1fr; gap: var(--layout-gap); }
 
   .contato-items-row { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .contato-item { align-items: center; text-align: center; }
@@ -1189,17 +1236,14 @@ footer {
     border-radius: 2px;
     margin: 1.5rem 0;
   }
-  .processo-aside { position: static; }
 
   .servicos-grid { grid-template-columns: repeat(2, 1fr); }
 
   .portfolio-grid { justify-content: flex-start; }
   .portfolio-grid .proj-card { flex: 0 0 calc((100% - var(--layout-gap)) / 2); }
   .portfolio-grid .proj-card .proj-card-img { aspect-ratio: 16 / 9; }
-  .portfolio-header { flex-direction: column; align-items: flex-start; }
 
   section { padding: 4rem 1.5rem; }
-  .servicos { padding: 4rem 1.5rem; }
   .contato { padding: 3rem 1.5rem; }
   .processo { padding: 4rem 1.5rem; }
 
@@ -1240,6 +1284,7 @@ footer {
 @media (min-width: 1025px) and (max-width: 1200px) {
   .portfolio-grid { justify-content: flex-start; }
   .portfolio-grid .proj-card { flex: 0 0 calc((100% - var(--layout-gap)) / 2); }
+  .portfolio-grid .proj-card .proj-card-img { aspect-ratio: 16 / 9; }
   .hero-left { padding: 4rem 3rem 3rem; }
   .hero-title { font-size: 56px; }
   .section-title { font-size: 48px; }
@@ -1261,6 +1306,10 @@ footer {
     min-height: auto;
     padding-top: 3rem;
     padding-bottom: 3rem;
+    /* Zera o padding lateral herdado da regra genérica 'section',
+       que desalinhava o Hero em relação às demais seções (bug real). */
+    padding-left: 0;
+    padding-right: 0;
   }
   .hero-right {
     padding-top: 0;
@@ -1908,12 +1957,7 @@ footer {
 <section class="portfolio" id="portfolio">
   <div class="section-inner">
     <div class="portfolio-header">
-      <div>
-        <h2 class="section-title mobile-center fade-up">Projetos <em>selecionados</em></h2>
-      </div>
-      <a href="https://www.instagram.com/arq.iltonferreira/" target="_blank" rel="noopener noreferrer" class="portfolio-link fade-up">
-        Ver todos os projetos →
-      </a>
+      <h2 class="section-title mobile-center fade-up">Projetos <em>selecionados</em></h2>
     </div>
 
     <div class="portfolio-grid">
@@ -2079,6 +2123,11 @@ footer {
       </div>
 
     </div>
+
+    <a href="https://www.instagram.com/arq.iltonferreira/" target="_blank" rel="noopener noreferrer" class="portfolio-link fade-up">
+      Ver todos os projetos
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </section>
 
@@ -2138,55 +2187,58 @@ footer {
       <div class="processo-steps">
 
         <div class="passo fade-up">
-          <div class="passo-num">01</div>
-          <div class="passo-content">
+          <div class="passo-header">
+            <div class="passo-num">01</div>
             <h3 class="passo-title">Briefing e Diagnóstico</h3>
-            <p class="passo-desc">Conversamos sobre suas necessidades, sonhos e expectativas. Entendemos o terreno, o programa e os condicionantes do projeto.</p>
           </div>
+          <p class="passo-desc">Conversamos sobre suas necessidades, sonhos e expectativas. Entendemos o terreno, o programa e os condicionantes do projeto.</p>
         </div>
 
         <div class="passo fade-up">
-          <div class="passo-num">02</div>
-          <div class="passo-content">
+          <div class="passo-header">
+            <div class="passo-num">02</div>
             <h3 class="passo-title">Estudo Preliminar</h3>
-            <p class="passo-desc">Desenvolvemos as primeiras propostas volumétricas e espaciais, traduzindo suas visões em soluções criativas e funcionais.</p>
           </div>
+          <p class="passo-desc">Desenvolvemos as primeiras propostas volumétricas e espaciais, traduzindo suas visões em soluções criativas e funcionais.</p>
         </div>
 
         <div class="passo fade-up">
-          <div class="passo-num">03</div>
-          <div class="passo-content">
+          <div class="passo-header">
+            <div class="passo-num">03</div>
             <h3 class="passo-title">Anteprojeto</h3>
-            <p class="passo-desc">Refinamos a solução escolhida com detalhes de materiais, volumetria e ambientação: planos, cortes, elevações e perspectivas 3D.</p>
           </div>
+          <p class="passo-desc">Refinamos a solução escolhida com detalhes de materiais, volumetria e ambientação: planos, cortes, elevações e perspectivas 3D.</p>
         </div>
 
         <div class="passo fade-up">
-          <div class="passo-num">04</div>
-          <div class="passo-content">
+          <div class="passo-header">
+            <div class="passo-num">04</div>
             <h3 class="passo-title">Projeto Executivo</h3>
-            <p class="passo-desc">Documentação técnica completa para a execução: plantas, detalhamentos, especificações de materiais e caderno de acabamentos.</p>
           </div>
+          <p class="passo-desc">Documentação técnica completa para a execução: plantas, detalhamentos, especificações de materiais e caderno de acabamentos.</p>
         </div>
 
         <div class="passo fade-up">
-          <div class="passo-num">05</div>
-          <div class="passo-content">
+          <div class="passo-header">
+            <div class="passo-num">05</div>
             <h3 class="passo-title">Suporte ao Projeto</h3>
-            <p class="passo-desc">Disponibilidade para esclarecimentos técnicos durante a execução da obra, garantindo que o projeto seja fielmente executado pela construtora do cliente.</p>
           </div>
+          <p class="passo-desc">Disponibilidade para esclarecimentos técnicos durante a execução da obra, garantindo que o projeto seja fielmente executado pela construtora do cliente.</p>
         </div>
 
       </div>
 
-      <div class="processo-aside fade-up">
+    </div>
+
+    <div class="processo-banner fade-up">
+      <div class="processo-banner-text">
         <p class="processo-aside-quote">"Transformar seu espaço em um ambiente único e alinhado às suas expectativas!"</p>
         <p class="processo-aside-sub">Cada projeto é desenvolvido de forma personalizada, do início ao fim, com atenção, dedicação e excelência em cada detalhe.</p>
-        <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="processo-aside-cta">
-          Iniciar meu projeto
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
       </div>
+      <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="processo-aside-cta">
+        Iniciar meu projeto
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -2338,6 +2390,13 @@ footer {
 </a>
 
 <script>
+// ── NAV SCROLL (esconde ao rolar, reaparece no topo, encolhe após 60px) ──
+const navEl = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  navEl.classList.toggle('scrolled', window.scrollY > 60);
+  navEl.classList.toggle('nav-hidden', window.scrollY > 0);
+}, { passive: true });
+
 // ── E-MAIL ANTI-SCRAPER ──
 document.querySelectorAll('a[data-mail]').forEach(function(el) {
   el.addEventListener('click', function(e) {
