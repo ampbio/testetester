@@ -902,11 +902,17 @@ section {
   padding: 2rem;
   border-radius: 2px;
   transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .passo-header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.85rem;
   margin-bottom: 0.85rem;
 }
@@ -982,6 +988,8 @@ section {
   letter-spacing: 0.02em;
   margin-bottom: 1.75rem;
   max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .processo-aside-cta {
@@ -1009,14 +1017,6 @@ section {
 }
 
 /* ── CONTATO ── */
-.contato {
-  background: var(--green-dark);
-  padding: 3rem 2rem;
-}
-
-.contato .section-title { color: var(--cream); }
-.contato .section-title em { color: rgba(240,239,229,0.45); }
-
 .contato-info {
   display: flex;
   flex-direction: column;
@@ -1084,7 +1084,7 @@ a.contato-item-value:hover { color: var(--cream); }
 /* ── FOOTER ── */
 footer {
   background: #1e2a1f;
-  padding: 2rem;
+  padding: 3.5rem 2rem 2rem;
   text-align: center;
   border-top: 1px solid rgba(240,239,229,0.05);
 }
@@ -1097,6 +1097,9 @@ footer {
 }
 
 .footer-copy {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(240,239,229,0.08);
   font-size: 9.5px;
   font-weight: 400;
   letter-spacing: 0.2em;
@@ -2229,68 +2232,6 @@ footer {
       </div>
 
     </div>
-
-    <div class="processo-banner fade-up">
-      <div class="processo-banner-text">
-        <p class="processo-aside-quote">"Transformar seu espaço em um ambiente único e alinhado às suas expectativas!"</p>
-        <p class="processo-aside-sub">Cada projeto é desenvolvido de forma personalizada, do início ao fim, com atenção, dedicação e excelência em cada detalhe.</p>
-      </div>
-      <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="processo-aside-cta">
-        Iniciar meu projeto
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ CONTATO ░░ -->
-<section class="contato" id="contato">
-  <div class="section-inner">
-    <div class="contato-info fade-up">
-
-      <div class="contato-items-row">
-        <div class="contato-item">
-          <span class="contato-item-label">Instagram</span>
-          <a href="https://www.instagram.com/arq.iltonferreira/" target="_blank" rel="noopener noreferrer" class="contato-item-value">@arq.iltonferreira</a>
-        </div>
-
-        <div class="contato-item">
-          <span class="contato-item-label">WhatsApp</span>
-          <a href="https://wa.me/554896982800" target="_blank" rel="noopener noreferrer" class="contato-item-value">(48) 9698-2800</a>
-        </div>
-
-        <div class="contato-item">
-          <span class="contato-item-label">E-mail</span>
-          <a data-mail="arqiltonferreira" data-domain="gmail.com" href="javascript:void(0)" class="contato-item-value">arqiltonferreira@gmail.com</a>
-        </div>
-
-        <div class="contato-item">
-          <span class="contato-item-label">Localização</span>
-          <span class="contato-item-value">Imbituba – SC</span>
-        </div>
-      </div>
-
-      <div class="contato-socials">
-        <a href="https://www.instagram.com/arq.iltonferreira/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
-          </svg>
-        </a>
-        <a href="https://wa.me/554896982800" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
-          </svg>
-        </a>
-        <a data-mail="arqiltonferreira" data-domain="gmail.com" href="javascript:void(0)" class="social-link" aria-label="E-mail">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-          </svg>
-        </a>
-      </div>
-
-    </div>
   </div>
 </section>
 
@@ -2376,8 +2317,72 @@ footer {
   </div>
 </section>
 
+<!-- ░░ CTA FINAL ░░ -->
+<section class="cta-final">
+  <div class="section-inner">
+    <div class="processo-banner fade-up">
+      <div class="processo-banner-text">
+        <p class="processo-aside-quote">"Transformar seu espaço em um ambiente único e alinhado às suas expectativas!"</p>
+        <p class="processo-aside-sub">Cada projeto é desenvolvido de forma personalizada, do início ao fim, com atenção, dedicação e excelência em cada detalhe.</p>
+      </div>
+      <a href="https://wa.me/554896982800?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="processo-aside-cta">
+        Iniciar meu projeto
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ░░ FOOTER ░░ -->
 <footer>
+  <div class="section-inner">
+    <div class="contato-info fade-up">
+
+      <div class="contato-items-row">
+        <div class="contato-item">
+          <span class="contato-item-label">Instagram</span>
+          <a href="https://www.instagram.com/arq.iltonferreira/" target="_blank" rel="noopener noreferrer" class="contato-item-value">@arq.iltonferreira</a>
+        </div>
+
+        <div class="contato-item">
+          <span class="contato-item-label">WhatsApp</span>
+          <a href="https://wa.me/554896982800" target="_blank" rel="noopener noreferrer" class="contato-item-value">(48) 9698-2800</a>
+        </div>
+
+        <div class="contato-item">
+          <span class="contato-item-label">E-mail</span>
+          <a data-mail="arqiltonferreira" data-domain="gmail.com" href="javascript:void(0)" class="contato-item-value">arqiltonferreira@gmail.com</a>
+        </div>
+
+        <div class="contato-item">
+          <span class="contato-item-label">Localização</span>
+          <span class="contato-item-value">Imbituba – SC</span>
+        </div>
+      </div>
+
+      <div class="contato-socials">
+        <a href="https://www.instagram.com/arq.iltonferreira/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/554896982800" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+          </svg>
+        </a>
+        <a data-mail="arqiltonferreira" data-domain="gmail.com" href="javascript:void(0)" class="social-link" aria-label="E-mail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
   <p class="footer-copy">© 2026 Ilton Ferreira · CAU/BR A245753-9 — Arquitetura e Interiores · Imbituba, SC</p>
   <p class="footer-dev">Website desenvolvido por <a href="https://amplifying.com.br/servicos" target="_blank" rel="noopener noreferrer" class="footer-dev-link">AMPLIFYING</a></p>
 </footer>
