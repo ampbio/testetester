@@ -46,18 +46,16 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@200;300;400;500&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
   --green:        #3D4F3E;
   --green-dark:   #2C3A2D;
-  --green-pale:   #6B7A6C;
   --cream:        #F0EFE5;
   --cream-dark:   #E4E3D8;
-  --cream-mid:    #ECEBD9;
   --text:         #2C3A2D;
   --text-muted:   #6B7A6C;
   --text-faint:   #96A597;
@@ -113,8 +111,6 @@ nav {
   top: 0; left: 0; right: 0;
   z-index: 100;
   background: rgba(240,239,229,0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(61,79,62,0.12);
   transition: background 0.3s, transform 0.35s ease;
 }
@@ -503,13 +499,20 @@ section {
   color: var(--text-muted);
 }
 
-.faq-list { max-width: 720px; }
+.faq-list { max-width: 720px; margin-left: auto; margin-right: auto; }
 @media (max-width: 1024px) {
   .section-title.mobile-center { text-align: center; }
 }
 @media (min-width: 1025px) {
   .section-title { text-align: center; }
-  .faq-list { max-width: 100%; }
+}
+
+/* FAQ: bloco centralizado na página; título centralizado, perguntas à esquerda. */
+#faq .section-title {
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ── SOBRE ── */
@@ -881,9 +884,12 @@ section {
 
 /* ── PROCESSO ── */
 .processo {
-  background: var(--cream-mid);
+  background: var(--green-dark);
   padding: 6rem 2rem;
 }
+
+.processo .section-title { color: var(--cream); }
+.processo .section-title em { color: rgba(240,239,229,0.45); }
 
 .processo-grid {
   margin-top: 3.5rem;
@@ -898,15 +904,19 @@ section {
 
 .passo {
   flex: 0 0 100%;
-  background: var(--cream);
+  background: rgba(240,239,229,0.06);
   padding: 2rem;
   border-radius: 2px;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background 0.2s;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.passo:hover {
+  background: rgba(240,239,229,0.12);
 }
 
 .passo-header {
@@ -922,7 +932,7 @@ section {
   font-size: 26px;
   font-weight: 300;
   font-style: italic;
-  color: rgba(61,79,62,0.3);
+  color: rgba(240,239,229,0.35);
   line-height: 1;
   flex-shrink: 0;
 }
@@ -931,13 +941,13 @@ section {
   font-family: 'DM Serif Display', serif;
   font-size: 20px;
   font-weight: 400;
-  color: var(--text);
+  color: var(--cream);
 }
 
 .passo-desc {
   font-size: 12.5px;
   line-height: 1.8;
-  color: var(--text-muted);
+  color: rgba(240,239,229,0.45);
   font-weight: 300;
 }
 
@@ -952,6 +962,9 @@ section {
 @media (min-width: 1367px) {
   .passo { flex: 0 0 calc((100% - 4 * var(--layout-gap)) / 5); }
 }
+
+/* Reduz o respiro de cima, que somado ao do FAQ ficava grande demais. */
+.cta-final { padding-top: 2.5rem; }
 
 /* Banner de CTA, abaixo dos cards de passos — empilhado e centralizado. */
 .processo-banner {
@@ -1141,7 +1154,12 @@ footer {
   text-decoration: none;
   z-index: 999;
   box-shadow: 0 4px 20px rgba(37,211,102,0.35);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.25s ease;
+}
+.whats-float.wa-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.85);
 }
 .whats-float:hover {
   transform: scale(1.07);
@@ -1247,7 +1265,6 @@ footer {
   .portfolio-grid .proj-card .proj-card-img { aspect-ratio: 16 / 9; }
 
   section { padding: 4rem 1.5rem; }
-  .contato { padding: 3rem 1.5rem; }
   .processo { padding: 4rem 1.5rem; }
 
 
@@ -1808,61 +1825,61 @@ footer {
           <img src="imagens/aeb1.jpg" alt="Residência A &amp; B — fachada principal">
         </div>
         <div class="hero-slide">
-          <img src="imagens/aeb2.jpg" alt="Residência A &amp; B — detalhe externo">
+          <img loading="lazy" src="imagens/aeb2.jpg" alt="Residência A &amp; B — detalhe externo">
         </div>
         <div class="hero-slide">
-          <img src="imagens/fee1.jpg" alt="Residência F &amp; E — fachada">
+          <img loading="lazy" src="imagens/fee1.jpg" alt="Residência F &amp; E — fachada">
         </div>
         <div class="hero-slide">
-          <img src="imagens/fee2.jpg" alt="Residência F &amp; E — vista lateral">
+          <img loading="lazy" src="imagens/fee2.jpg" alt="Residência F &amp; E — vista lateral">
         </div>
         <div class="hero-slide">
-          <img src="imagens/ier1.jpg" alt="Studio I &amp; R — sala integrada">
+          <img loading="lazy" src="imagens/ier1.jpg" alt="Studio I &amp; R — sala integrada">
         </div>
         <div class="hero-slide">
-          <img src="imagens/ier2.jpg" alt="Studio I &amp; R — cozinha">
+          <img loading="lazy" src="imagens/ier2.jpg" alt="Studio I &amp; R — cozinha">
         </div>
         <div class="hero-slide">
-          <img src="imagens/pep1.jpg" alt="Apto P &amp; P — sala de estar">
+          <img loading="lazy" src="imagens/pep1.jpg" alt="Apto P &amp; P — sala de estar">
         </div>
         <div class="hero-slide">
-          <img src="imagens/pep2.jpg" alt="Apto P &amp; P — ambientes integrados">
+          <img loading="lazy" src="imagens/pep2.jpg" alt="Apto P &amp; P — ambientes integrados">
         </div>
         <div class="hero-slide">
-          <img src="imagens/pep3.jpg" alt="Apto P &amp; P — detalhe de interiores">
+          <img loading="lazy" src="imagens/pep3.jpg" alt="Apto P &amp; P — detalhe de interiores">
         </div>
         <div class="hero-slide">
-          <img src="imagens/pep4.jpg" alt="Apto P &amp; P — quarto">
+          <img loading="lazy" src="imagens/pep4.jpg" alt="Apto P &amp; P — quarto">
         </div>
         <div class="hero-slide">
-          <img src="imagens/ces1.jpg" alt="Residência C &amp; S — área gourmet">
+          <img loading="lazy" src="imagens/ces1.jpg" alt="Residência C &amp; S — área gourmet">
         </div>
         <div class="hero-slide">
-          <img src="imagens/ces2.jpg" alt="Residência C &amp; S — piscina">
+          <img loading="lazy" src="imagens/ces2.jpg" alt="Residência C &amp; S — piscina">
         </div>
         <div class="hero-slide">
-          <img src="imagens/aep1.jpg" alt="Residência A &amp; P — fachada">
+          <img loading="lazy" src="imagens/aep1.jpg" alt="Residência A &amp; P — fachada">
         </div>
         <div class="hero-slide">
-          <img src="imagens/aep2.jpg" alt="Residência A &amp; P — paisagismo">
+          <img loading="lazy" src="imagens/aep2.jpg" alt="Residência A &amp; P — paisagismo">
         </div>
         <div class="hero-slide">
-          <img src="imagens/dec1.jpg" alt="Cabana D &amp; C — vista externa">
+          <img loading="lazy" src="imagens/dec1.jpg" alt="Cabana D &amp; C — vista externa">
         </div>
         <div class="hero-slide">
-          <img src="imagens/dec2.jpg" alt="Cabana D &amp; C — integração com a natureza">
+          <img loading="lazy" src="imagens/dec2.jpg" alt="Cabana D &amp; C — integração com a natureza">
         </div>
         <div class="hero-slide">
-          <img src="imagens/jek1.jpg" alt="Residência J &amp; K — fachada">
+          <img loading="lazy" src="imagens/jek1.jpg" alt="Residência J &amp; K — fachada">
         </div>
         <div class="hero-slide">
-          <img src="imagens/jek2.jpg" alt="Residência J &amp; K — detalhe">
+          <img loading="lazy" src="imagens/jek2.jpg" alt="Residência J &amp; K — detalhe">
         </div>
         <div class="hero-slide">
-          <img src="imagens/aea1.jpg" alt="Residência A &amp; A — volumetria">
+          <img loading="lazy" src="imagens/aea1.jpg" alt="Residência A &amp; A — volumetria">
         </div>
         <div class="hero-slide">
-          <img src="imagens/studio1.jpg" alt="Studio — cozinha integrada">
+          <img loading="lazy" src="imagens/studio1.jpg" alt="Studio — cozinha integrada">
         </div>
       </div>
 
@@ -2236,17 +2253,17 @@ footer {
 </section>
 
 <!-- ░░ FAQ ░░ -->
-<section style="background:var(--cream-mid);padding:5rem 2rem" id="faq">
+<section style="background:var(--cream);padding:5rem 2rem 2.5rem" id="faq">
   <div class="section-inner">
     <h2 class="section-title mobile-center fade-up" style="margin-bottom:2.5rem">Perguntas <em>frequentes</em></h2>
     <div style="display:flex;flex-direction:column;gap:0" class="faq-list">
 
-      <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
+      <details open style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up is-open">
         <summary style="font-size:14px;font-weight:400;letter-spacing:0.02em;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
           Quanto custa um projeto arquitetônico?
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O valor de um projeto arquitetônico varia conforme o tipo, residencial, comercial ou de interiores, a área total e o nível de detalhamento necessário. Após uma conversa inicial para entender o escopo, é elaborada uma proposta personalizada com todas as etapas e entregas previstas.</p>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300;max-height:none;opacity:1">O valor de um projeto arquitetônico varia conforme o tipo, residencial, comercial ou de interiores, a área total e o nível de detalhamento necessário. Após uma conversa inicial para entender o escopo, é elaborada uma <strong>proposta personalizada</strong> com todas as etapas e entregas previstas.</p>
       </details>
 
       <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
@@ -2254,7 +2271,7 @@ footer {
           O que está incluído em um projeto arquitetônico?
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">Um projeto arquitetônico completo inclui estudo preliminar, anteprojeto com perspectivas em 3D, plantas baixas, cortes, elevações, especificação de materiais e projeto executivo com todos os detalhamentos necessários para a execução da obra. Projetos para aprovação na prefeitura também incluem a documentação técnica exigida pelos órgãos competentes.</p>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">Um projeto arquitetônico completo inclui estudo preliminar, anteprojeto com perspectivas em 3D, plantas baixas, cortes, elevações, especificação de materiais e <strong>projeto executivo</strong> com todos os detalhamentos necessários para a execução da obra. Projetos para aprovação na prefeitura também incluem a documentação técnica exigida pelos órgãos competentes.</p>
       </details>
 
       <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
@@ -2262,7 +2279,7 @@ footer {
           Quanto tempo leva para desenvolver um projeto residencial?
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O prazo de um projeto residencial depende da complexidade e do tamanho da edificação. Em média, o processo completo, do estudo preliminar ao projeto executivo, leva entre 60 e 120 dias. Projetos de arquitetura de interiores ou consultorias pontuais podem ter prazos menores, definidos caso a caso.</p>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O prazo de um projeto residencial depende da complexidade e do tamanho da edificação. Em média, o processo completo, do estudo preliminar ao projeto executivo, leva entre <strong>60 e 120 dias</strong>. Projetos de arquitetura de interiores ou consultorias pontuais podem ter prazos menores, definidos caso a caso.</p>
       </details>
 
       <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
@@ -2270,7 +2287,7 @@ footer {
           Como funciona o processo de projeto arquitetônico?
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O processo começa com uma reunião para entender as necessidades do cliente, seguida pelo estudo preliminar, desenvolvimento do anteprojeto com imagens em 3D e elaboração do projeto executivo completo. Cada etapa é desenvolvida com atenção aos detalhes para garantir segurança e qualidade durante a execução da obra.</p>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O processo começa com uma reunião para entender as necessidades do cliente, seguida pelo estudo preliminar, desenvolvimento do anteprojeto com imagens em 3D e elaboração do <strong>projeto executivo completo</strong>. Cada etapa é desenvolvida com atenção aos detalhes para garantir segurança e qualidade durante a execução da obra.</p>
       </details>
 
       <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
@@ -2278,7 +2295,7 @@ footer {
           Quanto custa contratar um arquiteto em Imbituba?
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O valor para contratar um arquiteto em Imbituba varia conforme o tamanho, a complexidade e as necessidades de cada projeto. Após uma conversa inicial e análise do escopo, é possível elaborar uma proposta personalizada, considerando todas as etapas necessárias para o desenvolvimento do trabalho.</p>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O valor para contratar um <strong>arquiteto em Imbituba</strong> varia conforme o tamanho, a complexidade e as necessidades de cada projeto. Após uma conversa inicial e análise do escopo, é possível elaborar uma proposta personalizada, considerando todas as etapas necessárias para o desenvolvimento do trabalho.</p>
       </details>
 
       <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
@@ -2286,7 +2303,7 @@ footer {
           Quanto custa um projeto residencial?
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O investimento em um projeto residencial depende de fatores como área construída, padrão do imóvel e nível de detalhamento necessário. Cada projeto é desenvolvido de forma exclusiva, buscando proporcionar conforto, funcionalidade e aproveitamento inteligente dos espaços.</p>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O investimento em um <strong>projeto residencial</strong> depende de fatores como área construída, padrão do imóvel e nível de detalhamento necessário. Cada projeto é desenvolvido de forma exclusiva, buscando proporcionar conforto, funcionalidade e aproveitamento inteligente dos espaços.</p>
       </details>
 
       <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
@@ -2294,7 +2311,7 @@ footer {
           O escritório atende Praia do Rosa?
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">Sim. O escritório atende clientes em Praia do Rosa, Imbituba, Garopaba, Laguna e outras cidades do litoral sul de Santa Catarina. Os projetos podem ser realizados tanto presencialmente quanto de forma remota, mantendo acompanhamento próximo em todas as fases do trabalho.</p>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">Sim. O escritório atende clientes em Praia do Rosa, <strong>Imbituba, Garopaba, Laguna</strong> e outras cidades do litoral sul de Santa Catarina. Os projetos podem ser realizados tanto presencialmente quanto de forma remota, mantendo acompanhamento próximo em todas as fases do trabalho.</p>
       </details>
 
       <details style="border-top:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
@@ -2302,7 +2319,7 @@ footer {
           O arquiteto acompanha a obra?
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O escritório oferece suporte técnico durante a execução da obra, esclarecendo dúvidas e garantindo que o projeto arquitetônico seja fielmente executado. O acompanhamento presencial pode ser combinado conforme a necessidade e a localização do projeto, atendendo clientes em Imbituba, Garopaba, Praia do Rosa, Laguna, Tubarão e Jaguaruna.</p>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">O escritório oferece <strong>suporte técnico</strong> durante a execução da obra, esclarecendo dúvidas e garantindo que o projeto arquitetônico seja fielmente executado. O acompanhamento presencial pode ser combinado conforme a necessidade e a localização do projeto, atendendo clientes em Imbituba, Garopaba, Praia do Rosa, Laguna, Tubarão e Jaguaruna.</p>
       </details>
 
       <details style="border-top:1px solid rgba(61,79,62,0.12);border-bottom:1px solid rgba(61,79,62,0.12);padding:1.25rem 0" class="fade-up">
@@ -2310,7 +2327,7 @@ footer {
           Faz projeto para aprovação na prefeitura?
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-left:1rem"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">Sim. Os projetos são desenvolvidos de acordo com as normas e legislações vigentes, incluindo toda a documentação necessária para aprovação junto à prefeitura e demais órgãos competentes. O objetivo é garantir que a obra seja executada de forma regularizada e com segurança.</p>
+        <p style="font-size:13px;line-height:1.8;color:var(--text-muted);margin-top:1rem;font-weight:300">Sim. Os projetos são desenvolvidos de acordo com as normas e legislações vigentes, incluindo toda a documentação necessária para aprovação <strong>junto à prefeitura</strong> e demais órgãos competentes. O objetivo é garantir que a obra seja executada de forma regularizada e com segurança.</p>
       </details>
 
     </div>
@@ -2351,7 +2368,7 @@ footer {
 
         <div class="contato-item">
           <span class="contato-item-label">E-mail</span>
-          <a data-mail="arqiltonferreira" data-domain="gmail.com" href="javascript:void(0)" class="contato-item-value">arqiltonferreira@gmail.com</a>
+          <a data-mail="arqiltonferreira" data-domain="gmail.com" href="javascript:void(0)" class="contato-item-value mail-text"></a>
         </div>
 
         <div class="contato-item">
@@ -2402,8 +2419,54 @@ window.addEventListener('scroll', () => {
   navEl.classList.toggle('nav-hidden', window.scrollY > 0);
 }, { passive: true });
 
+// ── WHATSAPP FLUTUANTE (esconde sobre o Hero e sobre o Footer) ──
+(function () {
+  const waBtn = document.querySelector('.whats-float');
+  const hero = document.getElementById('hero');
+  const siteFooter = document.querySelector('footer');
+  if (!waBtn) return;
+
+  const HERO_CLEARANCE   = 110; // espaço que o botão ocupa no canto inferior direito
+  const FOOTER_CLEARANCE = 110; // idem, pra não sobrepor o rodapé
+
+  function updateWaVisibility() {
+    const viewportHeight = window.innerHeight;
+
+    let overHero = false;
+    if (hero) {
+      const heroRect = hero.getBoundingClientRect();
+      overHero = heroRect.bottom > HERO_CLEARANCE;
+    }
+
+    let overFooter = false;
+    if (siteFooter) {
+      const footerRect = siteFooter.getBoundingClientRect();
+      overFooter = footerRect.top < (viewportHeight - FOOTER_CLEARANCE);
+    }
+
+    waBtn.classList.toggle('wa-hidden', overHero || overFooter);
+  }
+
+  let waTicking = false;
+  function onWaScrollOrResize() {
+    if (!waTicking) {
+      requestAnimationFrame(function () { updateWaVisibility(); waTicking = false; });
+      waTicking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onWaScrollOrResize, { passive: true });
+  window.addEventListener('resize', onWaScrollOrResize);
+  updateWaVisibility();
+})();
+
 // ── E-MAIL ANTI-SCRAPER ──
 document.querySelectorAll('a[data-mail]').forEach(function(el) {
+  // Preenche o texto visível (se houver) só depois que o JS roda,
+  // pra não deixar o endereço em texto puro no HTML pra robôs de spam.
+  if (el.classList.contains('mail-text')) {
+    el.textContent = el.dataset.mail + '@' + el.dataset.domain;
+  }
   el.addEventListener('click', function(e) {
     e.preventDefault();
     window.location.href = 'mailto:' + el.dataset.mail + '@' + el.dataset.domain;
@@ -2459,16 +2522,33 @@ function heroStartAutoplay() {
   clearInterval(heroInterval);
   heroInterval = setInterval(function() { heroGoSlide(heroCur + 1); }, 4500);
 }
-if (!document.hidden) heroStartAutoplay();
 
-// Pausa quando a aba está em background (economiza CPU)
-document.addEventListener('visibilitychange', function() {
-  if (document.hidden) {
-    clearInterval(heroInterval);
-  } else {
+// Só roda o autoplay quando a aba está ativa E o Hero está visível na tela
+// (evita gastar bateria/processamento trocando slide que ninguém está vendo).
+var heroTabVisible = !document.hidden;
+var heroInView = true;
+function heroUpdateAutoplay() {
+  if (heroTabVisible && heroInView) {
     heroStartAutoplay();
+  } else {
+    clearInterval(heroInterval);
   }
+}
+heroUpdateAutoplay();
+
+document.addEventListener('visibilitychange', function() {
+  heroTabVisible = !document.hidden;
+  heroUpdateAutoplay();
 });
+
+var heroSectionEl = document.getElementById('hero');
+if (heroSectionEl && 'IntersectionObserver' in window) {
+  var heroObserver = new IntersectionObserver(function(entries) {
+    heroInView = entries[0].isIntersecting;
+    heroUpdateAutoplay();
+  }, { threshold: 0 });
+  heroObserver.observe(heroSectionEl);
+}
 
 // ── SWIPE HERO (mobile) ──
 (function() {
@@ -2493,42 +2573,63 @@ const obs = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-// ── FAQ (animação abrir/fechar) ──
-document.querySelectorAll('.faq-list details').forEach(function(det) {
-  var summary = det.querySelector('summary');
+// ── FAQ (animação abrir/fechar, comportamento accordion) ──
+var allFaqItems = document.querySelectorAll('.faq-list details');
+
+function closeFaqItem(det) {
   var content = det.querySelector('p');
+  det.classList.remove('is-open');
+  content.style.maxHeight = content.scrollHeight + 'px';
+  content.style.marginTop = getComputedStyle(content).marginTop;
+  requestAnimationFrame(function() {
+    content.style.maxHeight = '0px';
+    content.style.opacity = '0';
+    content.style.marginTop = '0px';
+  });
+  content.addEventListener('transitionend', function onEnd(e) {
+    if (e.propertyName !== 'max-height') return;
+    det.removeAttribute('open');
+    content.removeEventListener('transitionend', onEnd);
+  });
+}
+
+function openFaqItem(det) {
+  var content = det.querySelector('p');
+  det.setAttribute('open', '');
+  det.classList.add('is-open');
+  content.style.maxHeight = '0px';
+  content.style.opacity = '0';
+  content.style.marginTop = '0px';
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      content.style.opacity = '1';
+      content.style.marginTop = '1rem';
+    });
+  });
+  content.addEventListener('transitionend', function onEnd(e) {
+    if (e.propertyName !== 'max-height') return;
+    content.style.maxHeight = 'none';
+    content.removeEventListener('transitionend', onEnd);
+  });
+}
+
+allFaqItems.forEach(function(det) {
+  var summary = det.querySelector('summary');
 
   summary.addEventListener('click', function(e) {
     e.preventDefault();
 
     if (det.hasAttribute('open')) {
-      // Fechando
-      det.classList.remove('is-open');
-      content.style.maxHeight = content.scrollHeight + 'px';
-      requestAnimationFrame(function() {
-        content.style.maxHeight = '0px';
-        content.style.opacity = '0';
-      });
-      content.addEventListener('transitionend', function onEnd() {
-        det.removeAttribute('open');
-        content.removeEventListener('transitionend', onEnd);
-      }, { once: true });
+      closeFaqItem(det);
     } else {
-      // Abrindo
-      det.setAttribute('open', '');
-      det.classList.add('is-open');
-      content.style.maxHeight = '0px';
-      content.style.opacity = '0';
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          content.style.maxHeight = content.scrollHeight + 'px';
-          content.style.opacity = '1';
-        });
+      // Fecha qualquer outra pergunta aberta antes de abrir esta.
+      allFaqItems.forEach(function(other) {
+        if (other !== det && other.hasAttribute('open')) {
+          closeFaqItem(other);
+        }
       });
-      content.addEventListener('transitionend', function onEnd() {
-        content.style.maxHeight = 'none';
-        content.removeEventListener('transitionend', onEnd);
-      }, { once: true });
+      openFaqItem(det);
     }
   });
 });
